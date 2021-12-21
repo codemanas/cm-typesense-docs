@@ -1,0 +1,9 @@
+site_name: Typesense Documentation
+theme:
+  name: material
+nav: 
+    - Installation: index.md
+    - Getting Started: getting-started.md
+    - Shortcode: shortcode.md
+    - Advanced: 
+        - Adding Custom Post Types: advanced-custom-post-types.md
