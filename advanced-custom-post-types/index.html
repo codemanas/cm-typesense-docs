@@ -1,0 +1,655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="codemanas">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Adding Custom Post Types - Typesense Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#adding-custom-post-type" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Typesense Documentation" class="md-header-nav__button md-logo" aria-label="Typesense Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Typesense Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Adding Custom Post Types
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/codemanas/cm-typesense-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Typesense Documentation" class="md-nav__button md-logo" aria-label="Typesense Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Typesense Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/codemanas/cm-typesense-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../shortcode/" class="md-nav__link">
+      Shortcode
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Advanced
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Advanced" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Adding Custom Post Types
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Adding Custom Post Types
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-post-type_1" class="md-nav__link">
+    Adding Custom Post Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-schema" class="md-nav__link">
+    Adding Schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-data" class="md-nav__link">
+    Formatting Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-post-type_1" class="md-nav__link">
+    Adding Custom Post Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-schema" class="md-nav__link">
+    Adding Schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-data" class="md-nav__link">
+    Formatting Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/advanced-custom-post-types.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="adding-custom-post-type">Adding Custom Post Type</h1>
+<h2 id="introduction">Introduction</h2>
+<p>By default, the plugin supports posts and pages for indexing. Adding additional / custom post types can be achieve via filter hooks.
+There are three things you should be aware of.</p>
+<ol>
+<li><a href="#adding-custom-post-type_1">Adding the custom post type to available post types for indexing</a></li>
+<li><a href="#adding-schema">Adding schema for your custom post type</a></li>
+<li><a href="#formatting-data">Formatting data before documents are added</a></li>
+</ol>
+<p>For this guide - we have assumed that the custom post type is book, please note that the <code>slug</code> of custom post type is quite important.</p>
+<pre><code>/**
+ * Register a custom post type called &quot;book&quot;.
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+function wp_docs_codex_book_init() {
+    $labels = array(
+        'name'                  =&gt; _x( 'Books', 'Post type general name', 'textdomain' ),
+        'singular_name'         =&gt; _x( 'Book', 'Post type singular name', 'textdomain' ),
+        'menu_name'             =&gt; _x( 'Books', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar'        =&gt; _x( 'Book', 'Add New on Toolbar', 'textdomain' ),
+        'add_new'               =&gt; __( 'Add New', 'textdomain' ),
+        'add_new_item'          =&gt; __( 'Add New Book', 'textdomain' ),
+        'new_item'              =&gt; __( 'New Book', 'textdomain' ),
+        'edit_item'             =&gt; __( 'Edit Book', 'textdomain' ),
+        'view_item'             =&gt; __( 'View Book', 'textdomain' ),
+        'all_items'             =&gt; __( 'All Books', 'textdomain' ),
+        'search_items'          =&gt; __( 'Search Books', 'textdomain' ),
+        'parent_item_colon'     =&gt; __( 'Parent Books:', 'textdomain' ),
+        'not_found'             =&gt; __( 'No books found.', 'textdomain' ),
+        'not_found_in_trash'    =&gt; __( 'No books found in Trash.', 'textdomain' ),
+        'featured_image'        =&gt; _x( 'Book Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'set_featured_image'    =&gt; _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'remove_featured_image' =&gt; _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'use_featured_image'    =&gt; _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'archives'              =&gt; _x( 'Book archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+        'insert_into_item'      =&gt; _x( 'Insert into book', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
+        'uploaded_to_this_item' =&gt; _x( 'Uploaded to this book', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
+        'filter_items_list'     =&gt; _x( 'Filter books list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
+        'items_list_navigation' =&gt; _x( 'Books list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+        'items_list'            =&gt; _x( 'Books list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+    );
+
+    $args = array(
+        'labels'             =&gt; $labels,
+        'public'             =&gt; true,
+        'publicly_queryable' =&gt; true,
+        'show_ui'            =&gt; true,
+        'show_in_menu'       =&gt; true,
+        'query_var'          =&gt; true,
+        'rewrite'            =&gt; array( 'slug' =&gt; 'book' ),
+        'capability_type'    =&gt; 'post',
+        'has_archive'        =&gt; true,
+        'hierarchical'       =&gt; false,
+        'menu_position'      =&gt; null,
+        'supports'           =&gt; array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+    );
+
+    register_post_type( 'book', $args );
+}
+
+add_action( 'init', 'wp_docs_codex_book_init' );
+/**
+ * Create two taxonomies, genres and writers for the post type &quot;book&quot;.
+ *
+ * @see register_post_type() for registering custom post types.
+ */
+function wp_docs_create_book_taxonomies() {
+    // Add new taxonomy, make it hierarchical (like categories)
+    $labels = array(
+        'name'              =&gt; _x( 'Genres', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     =&gt; _x( 'Genre', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      =&gt; __( 'Search Genres', 'textdomain' ),
+        'all_items'         =&gt; __( 'All Genres', 'textdomain' ),
+        'parent_item'       =&gt; __( 'Parent Genre', 'textdomain' ),
+        'parent_item_colon' =&gt; __( 'Parent Genre:', 'textdomain' ),
+        'edit_item'         =&gt; __( 'Edit Genre', 'textdomain' ),
+        'update_item'       =&gt; __( 'Update Genre', 'textdomain' ),
+        'add_new_item'      =&gt; __( 'Add New Genre', 'textdomain' ),
+        'new_item_name'     =&gt; __( 'New Genre Name', 'textdomain' ),
+        'menu_name'         =&gt; __( 'Genre', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'      =&gt; true,
+        'labels'            =&gt; $labels,
+        'show_ui'           =&gt; true,
+        'show_admin_column' =&gt; true,
+        'query_var'         =&gt; true,
+        'rewrite'           =&gt; array( 'slug' =&gt; 'genre' ),
+    );
+
+    register_taxonomy( 'genre', array( 'book' ), $args );
+
+    unset( $args );
+    unset( $labels );
+
+    // Add new taxonomy, NOT hierarchical (like tags)
+    $labels = array(
+        'name'                       =&gt; _x( 'Writers', 'taxonomy general name', 'textdomain' ),
+        'singular_name'              =&gt; _x( 'Writer', 'taxonomy singular name', 'textdomain' ),
+        'search_items'               =&gt; __( 'Search Writers', 'textdomain' ),
+        'popular_items'              =&gt; __( 'Popular Writers', 'textdomain' ),
+        'all_items'                  =&gt; __( 'All Writers', 'textdomain' ),
+        'parent_item'                =&gt; null,
+        'parent_item_colon'          =&gt; null,
+        'edit_item'                  =&gt; __( 'Edit Writer', 'textdomain' ),
+        'update_item'                =&gt; __( 'Update Writer', 'textdomain' ),
+        'add_new_item'               =&gt; __( 'Add New Writer', 'textdomain' ),
+        'new_item_name'              =&gt; __( 'New Writer Name', 'textdomain' ),
+        'separate_items_with_commas' =&gt; __( 'Separate writers with commas', 'textdomain' ),
+        'add_or_remove_items'        =&gt; __( 'Add or remove writers', 'textdomain' ),
+        'choose_from_most_used'      =&gt; __( 'Choose from the most used writers', 'textdomain' ),
+        'not_found'                  =&gt; __( 'No writers found.', 'textdomain' ),
+        'menu_name'                  =&gt; __( 'Writers', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'          =&gt; false,
+        'labels'                =&gt; $labels,
+        'show_ui'               =&gt; true,
+        'show_admin_column'     =&gt; true,
+        'update_count_callback' =&gt; '_update_post_term_count',
+        'query_var'             =&gt; true,
+        'rewrite'               =&gt; array( 'slug' =&gt; 'writer' ),
+    );
+
+    register_taxonomy( 'writer', 'book', $args );
+}
+
+// hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'wp_docs_create_book_taxonomies', 0 );
+</code></pre>
+<h2 id="adding-custom-post-type_1">Adding Custom Post Type</h2>
+<p>The hook in question to use is : <code>cm_typesense_available_post_types</code></p>
+<pre><code>/*** Adds the post type book under available post_types ***/
+function cm_typesense_add_available_post_types( $available_post_types ) {
+    $available_post_types['book'] = [ 'label' =&gt; 'Book', 'value' =&gt; 'book' ];
+
+    return $available_post_types;
+}
+add_filter( 'cm_typesense_available_post_types',  'cm_typesense_add_available_post_types');
+</code></pre>
+<p>This will add your custom post type to the available post types dropdown in the backend. Which will allow you to enable the post type and index it.</p>
+<p>IMPORTANT NOTE: Please note the index and value MUST be the post_slug</p>
+<p>Result:
+<img alt="Backend with Book Post type available" src="../img/additional-post-types.png" /></p>
+<h2 id="adding-schema">Adding Schema</h2>
+<p>Your schema for the custom post type would most likely need to be different for your custom post type. For example you may want to send custom taxonomies as facets for your post type. To do so you will need to modify / add your schema - BEFORE - any indexing is done</p>
+<p>IMPORTANT NOTE: SCHEMA NEEDS TO BE DEFINED BEFORE COLLECTION IS CREATED.</p>
+<pre><code>//only necessary if the default post schema is not necessary
+function cm_typesense_add_book_schema( $schema, $name ) {
+    if ( $name == 'book' ) {
+        $schema = [
+            'name'                  =&gt; 'book',
+            'fields'                =&gt; [
+                [ 'name' =&gt; 'post_content', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_title', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_type', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_author', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'comment_count', 'type' =&gt; 'int64' ],
+                [ 'name' =&gt; 'is_sticky', 'type' =&gt; 'int32' ],
+                [ 'name' =&gt; 'post_excerpt', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_date', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_id', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_modified', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'id', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'permalink', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'post_thumbnail', 'type' =&gt; 'string' ],
+                [ 'name' =&gt; 'genre', 'type' =&gt; 'string[]', 'facet' =&gt; true ]
+            ],
+            'default_sorting_field' =&gt; 'comment_count'
+        ];
+    }
+
+
+    return $schema;
+}
+
+add_filter( 'cm_typesense_schema', 'cm_typesense_add_book_schema', 10, 2 );
+</code></pre>
+<p>In the example above - you can see genre is being sent as a facet. "genre" is the custom taxonomy attached to the book post type.</p>
+<h2 id="formatting-data">Formatting Data</h2>
+<pre><code>//you can modify the code as needed 
+//if your schema is simillar to the default post type then you should only change what fields you need to add
+//example here we are only adding genre
+function cm_typesense_format_book_data ( $formatted_data, $raw_data, $object_id, $schema_name ) {
+    if ( $schema_name == 'book' ) {
+        $terms  = get_the_terms( $object_id, 'genre' );
+        $genres = [];
+        foreach ( $terms as $term ) {
+            $genres[] = $term-&gt;name;
+        }
+        $formatted_data['genre'] = $genres;
+    }
+
+    return $formatted_data;
+}
+add_filter( 'cm_typesense_data_before_entry', 'cm_typesense_format_book_data', 10, 4 );
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../shortcode/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Shortcode
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
