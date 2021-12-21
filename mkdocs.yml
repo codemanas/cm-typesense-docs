@@ -1,4 +1,6 @@
 site_name: Typesense Documentation
+repo_url: https://github.com/codemanas/cm-typesense-docs
+site_author: codemanas
 theme:
   name: material
 nav: 
