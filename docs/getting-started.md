@@ -5,7 +5,7 @@ Before you do anything else, you must first add the API keys and configure the n
 
 If you are hosting typesense locally / on your own server.
 Then please see the steps here to generate API Keys
-[https://typesense.org/docs/0.22.1/api/api-keys.html](https://typesense.org/docs/0.22.1/api/api-keys.html){:target="\_blank"}
+<a href="https://typesense.org/docs/0.22.1/api/api-keys.html" target="_blank" rel="no-opener no-follow" >https://typesense.org/docs/0.22.1/api/api-keys.html</a>
 
 Otherwise, if you have gone with typesense cloud option - then once the cluster is set up. There will be an option to generate your API keys.
 
