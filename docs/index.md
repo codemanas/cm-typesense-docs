@@ -2,7 +2,7 @@
 
 ## Minimum Requirements
 
-* PHP 7.2 or greater is recommended
+* PHP 7.4 required or greater
 * MySQL 5.6 or greater is recommended
 ---
 

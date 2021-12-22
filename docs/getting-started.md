@@ -3,11 +3,11 @@
 ## Generate API Keys
 Before you do anything else, you must first add the API keys and configure the node.
 
-If you are hosting typesense locally / on your own server.
+If you are hosting Typesense locally / on your own server.
 Then please see the steps here to generate API Keys
 <a href="https://typesense.org/docs/0.22.1/api/api-keys.html" target="_blank" rel="no-opener no-follow" >https://typesense.org/docs/0.22.1/api/api-keys.html</a>
 
-Otherwise, if you have gone with typesense cloud option - then once the cluster is set up. There will be an option to generate your API keys.
+Otherwise, if you have gone with Typesense cloud option - then once the cluster is set up. There will be an option to generate your API keys.
 
 ![Api Keys Overview](img/api-keys-overview.png)
 *Above Shows overview of API Keys*
@@ -52,7 +52,7 @@ Pro version of the plugin will be needed to index custom post types.
 
 ## Bulk Index
 Bulk Index option allows you to index all posts(post types) at once.
-Indexing means they will add the document into typesense instant to be easily retrieved.
+Indexing means they will add the document into Typesense instant to be easily retrieved.
 
 ## Hijack WordPress Search
 When this option is enabled it will replace all search forms that use
