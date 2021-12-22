@@ -8,6 +8,8 @@ By default, Error Logs are enabled - you can disable them if you want. To do so 
 
 ![Typesense Debug Log settings](img/typesense-debug-log-settings.png)
 
+**Dates for logs are all in UTC time for uniformity**
+
 ##Error Logs:
 Error logs are logged if there is an error when a request is made to the Typesense node
 Some of the examples
