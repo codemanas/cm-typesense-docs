@@ -33,7 +33,7 @@ WordPress > Admin Area > Typesense > Settings You will be guided to a page like 
 Here - enter the details provided in the text file and click save.
 Your WordPress install will now be able to connect to your typensese instance.
 
-### Setup Autocomplete and Indexing
+## Setup Autocomplete and Indexing
 The next step is to enable and start indexing your posts.
 
 Going to Admin Area > Typesense 
@@ -45,16 +45,17 @@ Here you can
 2. Bulk index the selected post types
 3. Hijack WordPress Search to show autocomplete
 
-## Enable Post Types
+### Enable Post Types
 This option allows you to select which post types to index.
 By default the plugin allows you to index posts and pages.
 Pro version of the plugin will be needed to index custom post types.
 
-## Bulk Index
+### Bulk Index
 Bulk Index option allows you to index all posts(post types) at once.
 Indexing means they will add the document into Typesense instant to be easily retrieved.
 
-## Hijack WordPress Search
+### Hijack WordPress Search
 When this option is enabled it will replace all search forms that use
 default WordPress search with autocomplete.
+Developer Note: It will replace all calls for get_search_form() and the default WordPress search widget or "core/search" block used
 
