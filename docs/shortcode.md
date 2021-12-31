@@ -3,7 +3,9 @@
 ## Instant Search
 
 ###Shortcode
-```[cm_typesense_search post_types="book,post" filter="show" per_page="3" sortby="off" placeholder="Search for..."]```
+```
+[cm_typesense_search post_types="book,post" columns="3" filter="show" per_page="3" sortby="off" placeholder="Search for..."]
+```
 
 ### Options:
 ####placeholder
@@ -11,7 +13,7 @@
 - Description: Determines the placeholder for search field
 - Default: "Search for"
 
-####cols
+####columns
 - Values: 1 to 5
 - Description: Determines how may results to show per row
 - Default: 3
@@ -44,7 +46,9 @@ If multiple sources are enabled - filtering is disabled.
 ##Autocomplete
 
 ###Shortcode
-`[cm_typesense_autocomplete placeholder="Search for...""]`
+```
+[cm_typesense_autocomplete placeholder="Search for...""]
+```
 
 Description: Add the Autocomplete form wherever you may want to. There are no other options.
 
