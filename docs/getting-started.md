@@ -28,7 +28,7 @@ The Text file will have the following information
 After retrieving the required info go to 
 WordPress > Admin Area > Typesense > Settings You will be guided to a page like so.
 
-![Typesense WP Admin Page](img/typesense-wp-settings-page.png)
+![Typesense WP Admin Page](img/screenshot-3.png)
 
 Here - enter the details provided in the text file and click save.
 Your WordPress install will now be able to connect to your typensese instance.
@@ -37,7 +37,7 @@ Your WordPress install will now be able to connect to your typensese instance.
 The next step is to enable and start indexing your posts.
 
 Going to Admin Area > Typesense 
-![Autocomplete and Instant Search](img/autocomplete-instantsearch.png)
+![Autocomplete and Instant Search](img/screenshot-4.png)
 
 Here you can 
 
