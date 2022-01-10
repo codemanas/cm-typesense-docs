@@ -43,6 +43,16 @@ If multiple sources are enabled - filtering is disabled.
 - Description: Determines whether to show or hide the pagination for results
 - Default: `show`
 
+####query_by
+- Values: string (Advanced Usage [the typesense documentation](https://typesense.org/docs/0.22.1/api/documents.html#search))
+- Description: Query results by these fields
+- Default: `post_title,post_content`
+
+####sticky_first
+- Values: `yes` or `no`
+- Description: Show sticky posts first ?
+- Default: `no`
+
 ##Autocomplete
 
 ###Shortcode
