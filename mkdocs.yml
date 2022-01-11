@@ -9,4 +9,5 @@ nav:
     - Shortcode: shortcode.md
     - Debugging: debug.md
     - Advanced: 
+        - Overriding Template: template-overriding.md
         - Adding Custom Post Types: advanced-custom-post-types.md
