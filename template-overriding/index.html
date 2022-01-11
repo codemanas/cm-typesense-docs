@@ -10,19 +10,19 @@
       
         <meta name="author" content="codemanas">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
-        <title>Search with Typesense</title>
+        <title>Overriding Template - Search with Typesense</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
         
       
     
@@ -57,11 +57,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#search-with-typesense" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +66,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="." title="Search with Typesense" class="md-header-nav__button md-logo" aria-label="Search with Typesense">
+    <a href=".." title="Search with Typesense" class="md-header-nav__button md-logo" aria-label="Search with Typesense">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -88,7 +83,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Installation
+              Overriding Template
             
           </span>
         </div>
@@ -158,7 +153,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Search with Typesense" class="md-nav__button md-logo" aria-label="Search with Typesense">
+    <a href=".." title="Search with Typesense" class="md-nav__button md-logo" aria-label="Search with Typesense">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -186,20 +181,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
       Installation
     </a>
-    
   </li>
 
     
@@ -209,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="getting-started/" class="md-nav__link">
+    <a href="../getting-started/" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -221,7 +207,7 @@
 
 
   <li class="md-nav__item">
-    <a href="shortcode/" class="md-nav__link">
+    <a href="../shortcode/" class="md-nav__link">
       Shortcode
     </a>
   </li>
@@ -233,7 +219,7 @@
 
 
   <li class="md-nav__item">
-    <a href="debug/" class="md-nav__link">
+    <a href="../debug/" class="md-nav__link">
       Debugging
     </a>
   </li>
@@ -243,10 +229,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Advanced
@@ -264,11 +252,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="template-overriding/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Overriding Template
     </a>
+    
   </li>
 
         
@@ -278,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="advanced-custom-post-types/" class="md-nav__link">
+    <a href="../advanced-custom-post-types/" class="md-nav__link">
       Adding Custom Post Types
     </a>
   </li>
@@ -296,54 +291,65 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/template-overriding.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="search-with-typesense">Search with Typesense</h1>
-<p><img alt="Banner" src="img/banner-772x250.png" /></p>
-<h1 id="installation">Installation</h1>
-<h2 id="minimum-requirements">Minimum Requirements</h2>
+                  <h1>Overriding Template</h1>
+                
+                <p>Overriding the template allows you to change things of the output for your autocomplete or instant search design as you need to.</p>
 <ul>
-<li>PHP 7.4 required or greater</li>
-<li>MySQL 5.6 or greater is recommended</li>
+<li>Plugin base folder: <code>search-with-typesense/templates</code></li>
 </ul>
-<hr />
-<h2 id="automatic-installation">Automatic Installation</h2>
-<ol>
-<li>Go to WordPress Plugins &gt; Add New Search for "Search with Typesense"</li>
-<li>Click Install and then activate Plugin </li>
-</ol>
-<hr />
-<h2 id="manual-installation">Manual Installation</h2>
-<p>If for some reason automatic installation is not possible, go to <a href="https://wordpress.org/plugins/search-with-typesense/">https://wordpress.org/plugins/search-with-typesense/</a> and you will see the download button. 
-Clicking download button will provide you with a zip file of the plugin then.</p>
-<ol>
-<li>Go to WordPress Plugins &gt; Add New and click upload plugin.</li>
-<li>Click upload plugin and then add the zip file</li>
-<li>The plugin will then be installed, then activate the plugin.</li>
-</ol>
+<p>The templates are in the plugin <code>serach-with-typesense/templates</code> and you can override it by copying it to your child theme.</p>
+<p>To override, copy files from <code>wp-content/plugins/search-with-typesense/templates/</code> folder to <code>wp-content/themes/your-theme/search-with-typesense/</code>,</p>
+<p>Then you can make the changes as you need. For example if you want the filters to show up on the right instead of the left.
+Copy the file <code>instant-search.php</code> from <code>wp-content/plugins/search-with-typesense/templates/</code> to <code>wp-content/themes/your-theme/search-with-typesense/instant-search.php</code>.
+And change the div structure so that main-panel is first and filter-panel is second.</p>
+<p><em>End Result:</em>
+<img alt="Result" src="../img/template-override.png" /></p>
+<p><em>Below is sample of code - please change the template by copying from parent</em> </p>
+<pre><code>    &lt;div class=&quot;main-panel&quot;&gt;
+        &lt;div class=&quot;cm-typesense-search-results-wrapper&quot;&gt;
+            &lt;div class=&quot;cm-typesense-search-posts-pages-results-wrapper&quot;&gt;
+                &lt;?php
+                foreach ( $args['post_types'] as $post_type ) {// echo '&lt;pre&gt;'; var_dump( $config ); echo '&lt;/pre&gt;';
+                    ?&gt;
+                    &lt;div class=&quot;cm-typesense-shortcode-search-heading&quot;&gt;
+                        &lt;h2 class=&quot;cm-typesense-shortcode-search-title&quot;&gt;
+                            &lt;?php
+                            $title = ( isset( $config['config']['post_type'][ $post_type ]['label'] ) &amp;&amp; $config['config']['post_type'][ $post_type ]['label'] != '' ) ? $config['config']['post_type'][ $post_type ]['label'] : $config['available_post_types'][ $post_type ]['label'];
+                            echo esc_html( $title ); ?&gt;
+                        &lt;/h2&gt;
+                        &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ); ?&gt;-sortby cm-typesense-sortby&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ) ?&gt;-result&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;cm-typesense-pagination cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ); ?&gt;-pagination&quot;&gt;&lt;/div&gt;
+                &lt;?php } ?&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;?php if ( $args['filter'] === 'show' &amp;&amp; 1 === count( $args['post_types'] ) ) { ?&gt;
+        &lt;div class=&quot;filter-panel&quot;&gt;
+            &lt;?php
+            foreach ( $facet as $filters ) {
+                foreach ( $filters as $filter ) { ?&gt;
+                    &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $filter ); ?&gt;-filters&quot;
+                         data-title =&quot;&lt;?php  esc_html_e( sprintf( 'Filter by %s', ucwords( esc_html( $filter ) ) ), 'search-with-typesense' ); ?&gt;&quot;
+                    &gt;&lt;/div&gt;
+                &lt;?php }
+            }
+            ?&gt;
+        &lt;/div&gt;
+    &lt;?php } ?&gt;
+</code></pre>
                 
               
               
@@ -362,14 +368,28 @@ Clicking download button will provide you with a zip file of the plugin then.</p
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../debug/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Debugging
+              </div>
+            </div>
+          </a>
         
-          <a href="getting-started/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../advanced-custom-post-types/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Getting Started
+                Adding Custom Post Types
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -396,15 +416,15 @@ Clicking download button will provide you with a zip file of the plugin then.</p
       
     </div>
     
-      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
