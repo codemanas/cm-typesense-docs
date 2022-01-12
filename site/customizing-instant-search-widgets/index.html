@@ -419,7 +419,7 @@ add_filter( 'cm_typesense_search_facet_settings', 'cm_typesense_facet_modificati
 <p><img alt="Facet Customization" src="../img/customizing-widgets/facet-customization.png" />
 <em>End Result</em></p>
 <h2 id="sort-by-customization">Sort By Customization</h2>
-<p>You can only add items to sort by to sort by. To allow sort by various fields, a word of caution this is dependent on your schema so please make sure you are only adding sortable fields here. You should see what are sortable fields in Typesense documentation <a href="https://typesense.org/docs/0.22.1/api/documents.html#arguments">here</a> </p>
+<p>You can only add items to sort by, to allow sorting by various fields. A word of caution this is dependent on your schema so please make sure you are only adding sortable fields here. You should see what are sortable fields in Typesense documentation <a href="https://typesense.org/docs/0.22.1/api/documents.html#arguments">here</a> </p>
 <p>Example to add sort by comment count the following code will work.</p>
 <pre><code>function cm_typesense_sortby_items( $items, $post_type ) {
     if ( $post_type == 'post' ) {

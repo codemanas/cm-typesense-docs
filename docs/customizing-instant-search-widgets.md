@@ -30,7 +30,7 @@ Here I'm checking that the facet is "category" and if it is I am modifying it to
 *End Result*
 
 ##Sort By Customization
-You can only add items to sort by to sort by. To allow sort by various fields, a word of caution this is dependent on your schema so please make sure you are only adding sortable fields here. You should see what are sortable fields in Typesense documentation [here](https://typesense.org/docs/0.22.1/api/documents.html#arguments) 
+You can only add items to sort by, to allow sorting by various fields. A word of caution this is dependent on your schema so please make sure you are only adding sortable fields here. You should see what are sortable fields in Typesense documentation [here](https://typesense.org/docs/0.22.1/api/documents.html#arguments) 
 
 Example to add sort by comment count the following code will work.
 
