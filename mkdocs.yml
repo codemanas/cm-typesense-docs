@@ -3,11 +3,12 @@ repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
 theme:
   name: material
-nav: 
-    - Installation: index.md
-    - Getting Started: getting-started.md
-    - Shortcode: shortcode.md
-    - Debugging: debug.md
-    - Advanced: 
-        - Overriding Template: template-overriding.md
-        - Adding Custom Post Types: advanced-custom-post-types.md
+nav:
+  - Installation: index.md
+  - Getting Started: getting-started.md
+  - Shortcode: shortcode.md
+  - Debugging: debug.md
+  - Advanced:
+      - Overriding Template: template-overriding.md
+      - Customizing Widgets: customizing-instant-search-widgets.md
+      - Adding Custom Post Types: advanced-custom-post-types.md
