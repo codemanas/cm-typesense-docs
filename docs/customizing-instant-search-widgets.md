@@ -43,7 +43,7 @@ function cm_typesense_sortby_items( $items, $post_type ) {
 	return $items;
 }
 
-add_filter( 'cm_typesense_search_sortby_items', 'cm_typesense_sortby_items', 10, 2 );```
+add_filter( 'cm_typesense_search_sortby_items', 'cm_typesense_sortby_items', 10, 2 );
 ```
 
 
