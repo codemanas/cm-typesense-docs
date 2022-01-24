@@ -1,8 +1,9 @@
 site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
-theme:
-  name: material
+dev_addr: 172.16.238.10:3001
+
+
 nav:
   - Installation: index.md
   - Getting Started: getting-started.md
@@ -12,3 +13,5 @@ nav:
       - Overriding Template: template-overriding.md
       - Customizing Widgets: customizing-instant-search-widgets.md
       - Adding Custom Post Types: advanced-custom-post-types.md
+  - Addons:
+      - Typsesense Search for WooCommerce: tsfwc.md
