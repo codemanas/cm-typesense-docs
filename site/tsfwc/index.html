@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="codemanas">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Typsesense Search for WooCommerce - Search with Typesense</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Search with Typesense</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Installation</a>
+                            </li>
+                            <li >
+                                <a href="../getting-started/">Getting Started</a>
+                            </li>
+                            <li >
+                                <a href="../shortcode/">Shortcode</a>
+                            </li>
+                            <li >
+                                <a href="../debug/">Debugging</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../template-overriding/">Overriding Template</a>
+</li>
+                                    
+<li >
+    <a href="../customizing-instant-search-widgets/">Customizing Widgets</a>
+</li>
+                                    
+<li >
+    <a href="../advanced-custom-post-types/">Adding Custom Post Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Addons <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Typsesense Search for WooCommerce</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../advanced-custom-post-types/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/tsfwc.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#introduction">Introduction</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#minimum-requirements">Minimum Requirements</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#getting-started">Getting started</a></li>
+            <li><a href="#shortcodes">Shortcodes</a></li>
+            <li><a href="#template-overwriting">Template Overwriting</a></li>
+            <li><a href="#hooks-filters">Hooks &amp; Filters</a></li>
+            <li><a href="#change-per-page-dropdown-values-on-frontend">Change per page dropdown values on frontend</a></li>
+            <li><a href="#adding-custom-taxonomy-as-filters">Adding custom taxonomy as filters</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="introduction">Introduction</h1>
+<p>Typsense Search for WooCommerce is a premimum addon that provides robust, fast search functionality for WooCommerce products on your website. </p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Lightning-fast products search results in miliseconds</li>
+<li>Allow to override WooCommerce product search</li>
+<li>Allow to hijack WooCommerce shop and archive pages</li>
+<li>Provides result in WooCommerce default HTML structure</li>
+<li>Provides all the features for search and filter provided by WooCommerce but in a better and fast way</li>
+<li>Provides shortcodes for adding search in only specific locations.</li>
+<li>Hooks and filters for customizations</li>
+<li>Template Override for design customizations.</li>
+</ul>
+<h2 id="minimum-requirements">Minimum Requirements</h2>
+<ul>
+<li>PHP 7.4 required or greater</li>
+<li>MySQL 5.6 or greater is recommended</li>
+<li><a href="https://wordpress.org/plugins/search-with-typesense/" target="_blank" rel="no-opener no-follow" >Search with Typsense</a></li>
+<li><a href="https://wordpress.org/plugins/woocommerce/" target="_blank" rel="no-opener no-follow" >WooCommerce</a></li>
+</ul>
+<hr />
+<h2 id="installation">Installation</h2>
+<ol>
+<li>After purchasing from <a href="https://codemanas.com/">Codemanas</a>, download the zip file</li>
+<li>Then on your site's dashboard, go to <strong>WordPress Plugins &gt; Add New &gt; Search for "Search with Typesense"</strong></li>
+<li>Click Install and then activate Plugin </li>
+</ol>
+<hr />
+<h2 id="getting-started">Getting started</h2>
+<h3 id="activate-license">Activate License</h3>
+<p>After activating the plugin, go to <strong>Typesense-&gt;Addons</strong>, then activate the license.</p>
+<p><img alt="License Activate" src="../img/license.png" /></p>
+<h3 id="indexing-products">Indexing products</h3>
+<p>First you need to index i.e. push data to Typsense cloud. To do so, follow the below steps:</p>
+<ol>
+<li>Go to <strong>Typsense-&gt;Typesense</strong></li>
+<li>Select the <strong>Products</strong> post type from the dropdown in <strong>Select Posts Types to Enable</strong></li>
+<li>Then you can set the Products' <strong>label</strong> and <strong>max suggetion</strong> to be listed on autocomplete.</li>
+<li>After that, click the <strong>Index</strong> button to index. It may take few minutes depending upon the number of products you have.</li>
+<li>When the indexing is complete, you will get the success message and process is complete.</li>
+</ol>
+<p><img alt="Product Indexing" src="../img/indexing.png" /></p>
+<h3 id="settings">Settings</h3>
+<p>The plugin provides the following default settings at <strong>Typesense-&gt;WooCommerce</strong>:</p>
+<ol>
+<li>
+<p><strong>Hijack Shop page</strong> - Hijack shop page listing by the instant search</p>
+</li>
+<li>
+<p><strong>Filters</strong></p>
+<ul>
+<li><strong>Enable category</strong> - Enable category filtering</li>
+<li><strong>Enable price</strong> - Enable price filtering</li>
+<li><strong>Enable rating</strong> - Enable filtering by rating</li>
+<li><strong>Enable attributes</strong> - Enable filter by attributes</li>
+<li><strong>Enable sortby</strong> - Enable sortby</li>
+</ul>
+</li>
+<li>
+<p><strong>Pagination</strong> - Enable pagination</p>
+</li>
+<li>
+<p><strong>Show featured products first</strong> - Display featured products first while filtering or searching products</p>
+</li>
+<li>
+<p><strong>Search placeholder</strong> - Change placeholder text on the shop's search</p>
+</li>
+</ol>
+<p><img alt="Product Setting" src="../img/setting.png" /></p>
+<p><strong>Note:</strong> Same settings are provided in <strong>Dashboard-&gt;Customize</strong> then <strong>WooCommerce-&gt;Typesense Settings</strong> for previewing the live changes.</p>
+<p><img alt="Product Customizer Setting" src="../img/customizer.png" /></p>
+<h2 id="shortcodes">Shortcodes</h2>
+<p><code>[cm_tsfwc_search cat_filter='show' price_filter='show' rating_filter='show' attribute_filter='show' pagination='show' sortby='show' placeholder='Search products...' show_featured_first='no']</code></p>
+<h4 id="options">Options:</h4>
+<p><strong>cat_filter</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of the category filter</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>price_filter</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of the price filter</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>rating_filter</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of the rating filter</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>attribute_filter</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of the attribute filter</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>pagination</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of pagination</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>sortby</strong></p>
+<ul>
+<li>Value: <code>show</code> or <code>hide</code></li>
+<li>Description: Determines the showing or hiding of the sortby filter</li>
+<li>Default value: "show"</li>
+</ul>
+<p><strong>placeholder</strong></p>
+<ul>
+<li>Value: Any string</li>
+<li>Description: Placeholder text for the search input field</li>
+<li>Default value: "Search products"</li>
+</ul>
+<p><strong>show_featured_first</strong></p>
+<ul>
+<li>Value: <code>yes</code> or <code>no</code></li>
+<li>Description: Show the featured products first on the listing while searching or filtering</li>
+<li>Default value: "no"</li>
+</ul>
+<h2 id="template-overwriting">Template Overwriting</h2>
+<p>Overriding the template allows you to change the output for the producst listing design as you need to.</p>
+<p>The templates are in the plugin <code>typesense-search-for-woocommerce/templates</code> and you can override it by copying it to your theme.</p>
+<p>To override, copy files from <code>wp-content/plugins/typesense-search-for-woocommerce/templates/templates/</code> folder to <code>wp-content/themes/your-theme/typesense-search-for-woocommerce/templates/</code>. Then you can make the changes as you need.</p>
+<p>For example: if you want the filters to show up on the right instead of the left. </p>
+<ul>
+<li>
+<p>Copy the file <code>instant-search.php</code> from <code>typesense-search-for-woocommerce/templates/</code> to <code>your-theme/typesense-search-for-woocommerce/instant-search.php</code>. </p>
+</li>
+<li>
+<p>And change the div structure so that <code>filter-panel</code> is after <code>main-panel</code>.</p>
+</li>
+</ul>
+<p><em>End result:</em>
+<img alt="Product Indexing" src="../img/result.png" /></p>
+<h2 id="hooks-filters">Hooks &amp; Filters</h2>
+<h3 id="filters">Filters:</h3>
+<p><strong>cm_tsfwc_per_page_config</strong></p>
+<ul>
+<li>Description: Change the per page listing and values</li>
+<li>
+<p>Arguments: <code>$per_page_config</code> Array of configs with label and value</p>
+<ul>
+<li>Default value: 
+    <code>[
+    [ 'label' =&gt; 'Per page', 'value' =&gt; $atts['per_page'], 'default' =&gt; true ],
+    [ 'label' =&gt; '10 per page', 'value' =&gt; 10 ],
+    [ 'label' =&gt; '20 per page', 'value' =&gt; 20 ],
+    [ 'label' =&gt; '30 per page', 'value' =&gt; 30 ],
+    [ 'label' =&gt; '40 per page', 'value' =&gt; 40 ],
+    [ 'label' =&gt; '50 per page', 'value' =&gt; 50 ],
+]</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>cm_tsfwc_product_fields</strong></p>
+<ul>
+<li>Description: Add new fields to schema to be indexed.</li>
+<li>Arguments: <code>$product_fields</code> Array of fields to be indexed.</li>
+</ul>
+<p><strong>cm_tsfwc_data_before_entry</strong></p>
+<ul>
+<li>Description: Add the formatted data to the added fields.</li>
+<li>Arguments:<ul>
+<li><code>$formatted_data</code> Array of data to be returned.</li>
+<li><code>$raw_data</code> Raw data containing product object </li>
+<li><code>$object_id</code> Object ID passed</li>
+<li><code>$schema_name</code> Name of the schema which is <code>product</code> in this case.</li>
+</ul>
+</li>
+</ul>
+<h3 id="hooks">Hooks:</h3>
+<p><strong>cm_tsfwc_custom_attributes</strong></p>
+<ul>
+<li>Description: Hook to add custom attributes HTML to the structure</li>
+<li>Location: <code>templates/instant-search.php</code></li>
+</ul>
+<h2 id="change-per-page-dropdown-values-on-frontend">Change per page dropdown values on frontend</h2>
+<h3 id="use-case">Use Case:</h3>
+<p>What if you want to change the 10 per page, 20 per page and so on value to your own custom, let's say 50 per page, 100 per page and so on.</p>
+<h3 id="how-to-do-it">How to do it:</h3>
+<p>The plugin provides a filter: <code>cm_tsfwc_per_page_config</code> to change it.</p>
+<p>You can use it like below:</p>
+<pre><code>add_filter( 'cm_tsfwc_per_page_config', 'your_slug_change_per_page' );
+
+function your_slug_change_per_page( $per_page_config ) {
+    $per_page_config = [
+        [ 'label' =&gt; '50 per page', 'value' =&gt; 50, 'default' =&gt; true ], // one value should always have 'default' =&gt; true
+        [ 'label' =&gt; '100 per page', 'value' =&gt; 100 ],
+        [ 'label' =&gt; '150 per page', 'value' =&gt; 150 ],
+        [ 'label' =&gt; '200 per page', 'value' =&gt; 200 ],
+    ];
+    return $per_page_config;
+}
+</code></pre>
+
+<h2 id="adding-custom-taxonomy-as-filters">Adding custom taxonomy as filters</h2>
+<h3 id="use-case_1">Use Case:</h3>
+<p>Suppose you want to add tags ( or any other custom taxonomy ) filter to the shop/archive page other than the default ones provided by the addon. </p>
+<h3 id="how-to-do-it_1">How to do it:</h3>
+<h4 id="add-field-to-the-schema">Add field to the schema:</h4>
+<p>First you need to add your field to the <code>$product_fields</code> array which is added to the schema using the filter <code>cm_tsfwc_product_fields</code> like this:</p>
+<pre><code>add_filter( 'cm_tsfwc_product_fields', 'your_slug_add_product_fields' );
+
+function your_slug_add_product_fields( $product_fields ) {
+    $product_fields[] = [ 'name' =&gt; 'tags', 'type' =&gt; 'string[]', 'facet' =&gt; true ];
+
+    return $product_fields;
+}
+
+</code></pre>
+
+<p><strong><em>Note: While adding new field to schema only the <code>name</code> should be different. <code>type</code> should be <code>string[]</code> and <code>facet</code> should always be <code>true</code> </em></strong></p>
+<h4 id="update-the-document-data-to-be-indexed">Update the document data to be indexed</h4>
+<p>After you have added the field, data for the field should be provided using the filter <code>cm_tsfwc_data_before_entry</code> like below:</p>
+<pre><code>add_filter( 'cm_tsfwc_data_before_entry', 'your_slug_add_data_before_entry', 10, 4 );
+
+function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id, $schema_name ) {
+
+    if( $schema_name === 'product' ) { // only add data if the schema is product 
+
+        $product_tags = get_the_terms( $object_id, 'product_tag' );
+
+        $product_tags_arr = [];
+
+        if( ! is_wp_error( $product_tags ) ) {
+            foreach( $product_tags as $product_tag ) {
+                $product_tags_arr[] = $product_tag-&gt;name;
+            }
+        } else {
+            $product_tags_arr = []; // Only array can be pushed to the data. When no data, empty array is the must
+        }
+
+        $formatted_data['tags'] = $product_tags_arr;
+    }
+
+    return $formatted_data;
+
+}
+
+</code></pre>
+
+<p><strong><em>Note: The index for the <code>$formatted_data</code> should be same as name of the field added before. For example: name of the field added before is <code>'tags'</code> so the index for the <code>$formatted_data</code> is also <code>tags</code>. </em></strong></p>
+<p><strong><em>Important: After changing the schema, collection should be deleted and reindexed to work properly.</em></strong></p>
+<h3 id="displaying-the-filter">Displaying the filter</h3>
+<p>To display the filter on the frontend, use the action <code>cm_tsfwc_custom_attributes</code> like below:</p>
+<pre><code>add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
+
+function your_slug_add_custom_attr() {
+    echo '&lt;div data-facet_name=&quot;tags&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot;&gt;&lt;/div&gt;';
+}
+
+</code></pre>
+
+<p><code>data-facet_name</code>: It should same as the name of the field added before. 
+                   For example: here name of the field added before is <code>'tags'</code> so the <code>data-facet_name</code> should be <code>tags</code></p>
+<p><code>data-title</code>: Title for the filter</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
