@@ -67,6 +67,8 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 
 5. **Search placeholder** - Change placeholder text on the shop's search
 
+6. **Hijack Product Search** - Hijack WooCommerce search widget and block with Autocomplete.
+
 ![Product Setting](img/setting.png)
 
 **Note:** Same settings are provided in **Dashboard->Customize** then **WooCommerce->Typesense Settings** for previewing the live changes.
