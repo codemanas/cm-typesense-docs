@@ -1,8 +1,6 @@
 site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
-theme:
-  name: material
 nav:
   - Installation: index.md
   - Getting Started: getting-started.md
