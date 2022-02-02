@@ -296,7 +296,7 @@ function your_slug_add_custom_attr() {
 `data-title`: Title for the filter
 
 
-## Adding WooCommerce widgets to the sidebar
+## Adding additional widgets to the sidebar
 
 ### Use Case:
 Suppose you want to add default WooCommerce widgets like *Top Rated Products* below the filters
