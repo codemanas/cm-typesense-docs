@@ -294,3 +294,22 @@ function your_slug_add_custom_attr() {
 				   For example: here name of the field added before is `'tags'` so the `data-facet_name` should be `tags`
 
 `data-title`: Title for the filter
+
+
+## Adding WooCommerce widgets to the sidebar
+
+### Use Case:
+Suppose you want to add default WooCommerce widgets like *Top Rated Products* below the filters
+
+### How to do it:
+
+#### Use `cm_tsfwc_add_widgets` hook
+
+```
+add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
+
+function mytheme_add_widgets() {
+	the_widget( 'WC_Widget_Top_Rated_Products' );
+}
+
+```
