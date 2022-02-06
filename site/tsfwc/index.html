@@ -541,6 +541,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adding-additional-widgets-to-the-sidebar" class="md-nav__link">
+    Adding additional widgets to the sidebar
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding additional widgets to the sidebar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case_2" class="md-nav__link">
+    Use Case:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-do-it_2" class="md-nav__link">
+    How to do it:
+  </a>
+  
+    <nav class="md-nav" aria-label="How to do it:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cm_tsfwc_add_widgets-hook" class="md-nav__link">
+    Use cm_tsfwc_add_widgets hook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -758,6 +798,46 @@
   <a href="#displaying-the-filter" class="md-nav__link">
     Displaying the filter
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-additional-widgets-to-the-sidebar" class="md-nav__link">
+    Adding additional widgets to the sidebar
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding additional widgets to the sidebar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case_2" class="md-nav__link">
+    Use Case:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-do-it_2" class="md-nav__link">
+    How to do it:
+  </a>
+  
+    <nav class="md-nav" aria-label="How to do it:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cm_tsfwc_add_widgets-hook" class="md-nav__link">
+    Use cm_tsfwc_add_widgets hook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1041,6 +1121,18 @@ function your_slug_add_custom_attr() {
 <p><code>data-facet_name</code>: It should same as the name of the field added before. 
                    For example: here name of the field added before is <code>'tags'</code> so the <code>data-facet_name</code> should be <code>tags</code></p>
 <p><code>data-title</code>: Title for the filter</p>
+<h2 id="adding-additional-widgets-to-the-sidebar">Adding additional widgets to the sidebar</h2>
+<h3 id="use-case_2">Use Case:</h3>
+<p>Suppose you want to add default WooCommerce widgets like <em>Top Rated Products</em> below the filters</p>
+<h3 id="how-to-do-it_2">How to do it:</h3>
+<h4 id="use-cm_tsfwc_add_widgets-hook">Use <code>cm_tsfwc_add_widgets</code> hook</h4>
+<pre><code>add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
+
+function mytheme_add_widgets() {
+    the_widget( 'WC_Widget_Top_Rated_Products' );
+}
+
+</code></pre>
                 
               
               
