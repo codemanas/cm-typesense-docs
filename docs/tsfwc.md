@@ -313,3 +313,19 @@ function mytheme_add_widgets() {
 }
 
 ```
+
+
+## Removing attribute filter
+
+### Use Case:
+Suppose you want to remove Filter by `size` filter.
+
+#### Use `cm_tsfwc_attribute_facet_skip` hook
+
+```
+add_filter( 'cm_tsfwc_attribute_facet_skip', 'mytheme_hide_attribute_facet' );
+
+function mytheme_hide_attribute_facet() {
+	return 'book-author';
+}
+```
