@@ -141,7 +141,7 @@ To override, copy files from `wp-content/plugins/typesense-search-for-woocommerc
 
 For example: if you want the filters to show up on the right instead of the left. 
 
-* Copy the file `instant-search.php` from `typesense-search-for-woocommerce/templates/` to `your-theme/search-with-typesense/woocommerce/instant-search.php`. 
+* Copy the file `instant-search.php` from `typesense-search-for-woocommerce/templates/instant-search.php` to `your-theme/search-with-typesense/woocommerce/instant-search.php`. 
 
 * And change the div structure so that `filter-panel` is after `main-panel`.
 
