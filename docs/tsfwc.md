@@ -136,12 +136,12 @@ Overriding the template allows you to change the output for the producst listing
 
 The templates are in the plugin `typesense-search-for-woocommerce/templates` and you can override it by copying it to your theme.
 
-To override, copy files from `wp-content/plugins/typesense-search-for-woocommerce/templates/templates/` folder to `wp-content/themes/your-theme/typesense-search-for-woocommerce/templates/`. Then you can make the changes as you need.
+To override, copy files from `wp-content/plugins/typesense-search-for-woocommerce/templates/` folder to `wp-content/themes/your-theme/search-with-typesense/woocommerce`. Then you can make the changes as you need.
 
 
 For example: if you want the filters to show up on the right instead of the left. 
 
-* Copy the file `instant-search.php` from `typesense-search-for-woocommerce/templates/` to `your-theme/typesense-search-for-woocommerce/instant-search.php`. 
+* Copy the file `instant-search.php` from `typesense-search-for-woocommerce/templates/` to `your-theme/search-with-typesense/woocommerce/instant-search.php`. 
 
 * And change the div structure so that `filter-panel` is after `main-panel`.
 

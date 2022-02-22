@@ -2,7 +2,7 @@ Overriding the template allows you to change things of the output for your autoc
 
 - Plugin base folder: `search-with-typesense/templates`
 
-The templates are in the plugin `serach-with-typesense/templates` and you can override it by copying it to your child theme.
+The templates are in the plugin `search-with-typesense/templates` and you can override it by copying it to your child theme.
 
 To override, copy files from `wp-content/plugins/search-with-typesense/templates/` folder to `wp-content/themes/your-theme/search-with-typesense/`,
 
