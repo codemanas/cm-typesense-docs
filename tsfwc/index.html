@@ -434,23 +434,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hooks-filters" class="md-nav__link">
-    Hooks &amp; Filters
+  <a href="#action-hooks-filter-hooks-extending-plugin" class="md-nav__link">
+    Action Hooks &amp; Filter Hooks / Extending Plugin
   </a>
   
-    <nav class="md-nav" aria-label="Hooks &amp; Filters">
+    <nav class="md-nav" aria-label="Action Hooks &amp; Filter Hooks / Extending Plugin">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filters" class="md-nav__link">
-    Filters:
+  <a href="#filter-hooks" class="md-nav__link">
+    Filter Hooks:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
-    Hooks:
+  <a href="#action-hooks" class="md-nav__link">
+    Action Hooks:
   </a>
   
 </li>
@@ -542,11 +542,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-additional-widgets-to-the-sidebar" class="md-nav__link">
-    Adding additional widgets to the sidebar
+  <a href="#adding-static-code-widgets-to-the-sidebar" class="md-nav__link">
+    Adding static code / widgets to the sidebar
   </a>
   
-    <nav class="md-nav" aria-label="Adding additional widgets to the sidebar">
+    <nav class="md-nav" aria-label="Adding static code / widgets to the sidebar">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -565,8 +565,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cm_tsfwc_add_widgets-hook" class="md-nav__link">
-    Use cm_tsfwc_add_widgets hook
+  <a href="#use-cm_tsfwc_before_filter_panel_end-hook" class="md-nav__link">
+    Use cm_tsfwc_before_filter_panel_end hook
   </a>
   
 </li>
@@ -732,23 +732,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hooks-filters" class="md-nav__link">
-    Hooks &amp; Filters
+  <a href="#action-hooks-filter-hooks-extending-plugin" class="md-nav__link">
+    Action Hooks &amp; Filter Hooks / Extending Plugin
   </a>
   
-    <nav class="md-nav" aria-label="Hooks &amp; Filters">
+    <nav class="md-nav" aria-label="Action Hooks &amp; Filter Hooks / Extending Plugin">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filters" class="md-nav__link">
-    Filters:
+  <a href="#filter-hooks" class="md-nav__link">
+    Filter Hooks:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
-    Hooks:
+  <a href="#action-hooks" class="md-nav__link">
+    Action Hooks:
   </a>
   
 </li>
@@ -840,11 +840,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-additional-widgets-to-the-sidebar" class="md-nav__link">
-    Adding additional widgets to the sidebar
+  <a href="#adding-static-code-widgets-to-the-sidebar" class="md-nav__link">
+    Adding static code / widgets to the sidebar
   </a>
   
-    <nav class="md-nav" aria-label="Adding additional widgets to the sidebar">
+    <nav class="md-nav" aria-label="Adding static code / widgets to the sidebar">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -863,8 +863,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cm_tsfwc_add_widgets-hook" class="md-nav__link">
-    Use cm_tsfwc_add_widgets hook
+  <a href="#use-cm_tsfwc_before_filter_panel_end-hook" class="md-nav__link">
+    Use cm_tsfwc_before_filter_panel_end hook
   </a>
   
 </li>
@@ -1055,7 +1055,7 @@
 <li>Default value: "no"</li>
 </ul>
 <h2 id="template-overwriting">Template Overwriting</h2>
-<p>Overriding the template allows you to change the output for the producst listing design as you need to.</p>
+<p>Overriding the template allows you to change the output for the product listing design as you need to.</p>
 <p>The templates are in the plugin <code>typesense-search-for-woocommerce/templates</code> and you can override it by copying it to your theme.</p>
 <p>To override, copy files from <code>wp-content/plugins/typesense-search-for-woocommerce/templates/</code> folder to <code>wp-content/themes/your-theme/search-with-typesense/woocommerce</code>. Then you can make the changes as you need.</p>
 <p>For example: if you want the filters to show up on the right instead of the left. </p>
@@ -1069,26 +1069,25 @@
 </ul>
 <p><em>End result:</em>
 <img alt="Product Indexing" src="../img/result.png" /></p>
-<h2 id="hooks-filters">Hooks &amp; Filters</h2>
-<h3 id="filters">Filters:</h3>
+<h2 id="action-hooks-filter-hooks-extending-plugin">Action Hooks &amp; Filter Hooks / Extending Plugin</h2>
+<p>There are plenty of Hooks and Filters provided by the plugin to allow developers to customize or add additional functionality to the plugin</p>
+<h3 id="filter-hooks">Filter Hooks:</h3>
+<p>Please see <a href="https://developer.wordpress.org/plugins/hooks/filters/">https://developer.wordpress.org/plugins/hooks/filters/</a> for details of what filters are in WordPress.</p>
 <p><strong>cm_tsfwc_per_page_config</strong></p>
 <ul>
 <li>Description: Change the per page listing and values</li>
-<li>
-<p>Arguments: <code>$per_page_config</code> Array of configs with label and value</p>
-<ul>
-<li>Default value: 
-    <code>[
-    [ 'label' =&gt; 'Per page', 'value' =&gt; $atts['per_page'], 'default' =&gt; true ],
-    [ 'label' =&gt; '10 per page', 'value' =&gt; 10 ],
-    [ 'label' =&gt; '20 per page', 'value' =&gt; 20 ],
-    [ 'label' =&gt; '30 per page', 'value' =&gt; 30 ],
-    [ 'label' =&gt; '40 per page', 'value' =&gt; 40 ],
-    [ 'label' =&gt; '50 per page', 'value' =&gt; 50 ],
-]</code></li>
+<li>Arguments: <code>$per_page_config</code> Array of configs with label and value   </li>
+<li>Default value:</li>
 </ul>
-</li>
-</ul>
+<pre><code>    [
+        [ 'label' =&gt; 'Per page', 'value' =&gt; $atts['per_page'], 'default' =&gt; true ],
+        [ 'label' =&gt; '10 per page', 'value' =&gt; 10 ],
+        [ 'label' =&gt; '20 per page', 'value' =&gt; 20 ],
+        [ 'label' =&gt; '30 per page', 'value' =&gt; 30 ],
+        [ 'label' =&gt; '40 per page', 'value' =&gt; 40 ],
+        [ 'label' =&gt; '50 per page', 'value' =&gt; 50 ],
+    ]
+</code></pre>
 <p><strong>cm_tsfwc_product_fields</strong></p>
 <ul>
 <li>Description: Add new fields to schema to be indexed.</li>
@@ -1105,7 +1104,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="hooks">Hooks:</h3>
+<h3 id="action-hooks">Action Hooks:</h3>
+<p>Please see <a href="https://developer.wordpress.org/plugins/hooks/actions/">https://developer.wordpress.org/plugins/hooks/actions/</a> for details of what action hooks are in WordPress.</p>
 <p><strong>cm_tsfwc_custom_attributes</strong></p>
 <ul>
 <li>Description: Hook to add custom attributes HTML to the structure</li>
@@ -1187,11 +1187,11 @@ function your_slug_add_custom_attr() {
 <p><code>data-facet_name</code>: It should same as the name of the field added before. 
                    For example: here name of the field added before is <code>'tags'</code> so the <code>data-facet_name</code> should be <code>tags</code></p>
 <p><code>data-title</code>: Title for the filter</p>
-<h2 id="adding-additional-widgets-to-the-sidebar">Adding additional widgets to the sidebar</h2>
+<h2 id="adding-static-code-widgets-to-the-sidebar">Adding static code / widgets to the sidebar</h2>
 <h3 id="use-case_2">Use Case:</h3>
 <p>Suppose you want to add default WooCommerce widgets like <em>Top Rated Products</em> below the filters</p>
 <h3 id="how-to-do-it_2">How to do it:</h3>
-<h4 id="use-cm_tsfwc_add_widgets-hook">Use <code>cm_tsfwc_add_widgets</code> hook</h4>
+<h4 id="use-cm_tsfwc_before_filter_panel_end-hook">Use <code>cm_tsfwc_before_filter_panel_end</code> hook</h4>
 <pre><code>add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
 
 function mytheme_add_widgets() {
