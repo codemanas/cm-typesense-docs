@@ -132,7 +132,7 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 
 ## Template Overwriting
 
-Overriding the template allows you to change the output for the producst listing design as you need to.
+Overriding the template allows you to change the output for the product listing design as you need to.
 
 The templates are in the plugin `typesense-search-for-woocommerce/templates` and you can override it by copying it to your theme.
 
@@ -149,24 +149,26 @@ For example: if you want the filters to show up on the right instead of the left
 ![Product Indexing](img/result.png)
 
 
-## Hooks & Filters
-
-### Filters:
+## Action Hooks & Filter Hooks / Extending Plugin
+There are plenty of Hooks and Filters provided by the plugin to allow developers to customize or add additional functionality to the plugin
+### Filter Hooks:
+Please see [https://developer.wordpress.org/plugins/hooks/filters/](https://developer.wordpress.org/plugins/hooks/filters/) for details of what filters are in WordPress.
 
 **cm_tsfwc_per_page_config**
 
 * Description: Change the per page listing and values
-* Arguments: `$per_page_config` Array of configs with label and value
-	
-	* Default value: 
-		`[
+* Arguments: `$per_page_config` Array of configs with label and value	
+* Default value:
+```
+	[
 		[ 'label' => 'Per page', 'value' => $atts['per_page'], 'default' => true ],
 		[ 'label' => '10 per page', 'value' => 10 ],
 		[ 'label' => '20 per page', 'value' => 20 ],
 		[ 'label' => '30 per page', 'value' => 30 ],
 		[ 'label' => '40 per page', 'value' => 40 ],
 		[ 'label' => '50 per page', 'value' => 50 ],
-	]`
+	]
+```
 
 **cm_tsfwc_product_fields**
 
@@ -182,7 +184,9 @@ For example: if you want the filters to show up on the right instead of the left
 	* `$object_id` Object ID passed
 	* `$schema_name` Name of the schema which is `product` in this case.
 
-### Hooks:
+### Action Hooks:
+Please see [https://developer.wordpress.org/plugins/hooks/actions/](https://developer.wordpress.org/plugins/hooks/actions/) for details of what action hooks are in WordPress.
+
 
 **cm_tsfwc_custom_attributes**
 
@@ -296,14 +300,14 @@ function your_slug_add_custom_attr() {
 `data-title`: Title for the filter
 
 
-## Adding additional widgets to the sidebar
+## Adding static code / widgets to the sidebar
 
 ### Use Case:
 Suppose you want to add default WooCommerce widgets like *Top Rated Products* below the filters
 
 ### How to do it:
 
-#### Use `cm_tsfwc_add_widgets` hook
+#### Use `cm_tsfwc_before_filter_panel_end` hook
 
 ```
 add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
