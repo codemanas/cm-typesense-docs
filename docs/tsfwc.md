@@ -225,29 +225,9 @@ Suppose you want to add tags ( or any other custom taxonomy ) filter to the shop
 
 ### How to do it:
 
-#### Add field to the schema: 
-
-First you need to add your field to the `$product_fields` array which is added to the schema using the filter `cm_tsfwc_product_fields` like this:
-
-```
-add_filter( 'cm_tsfwc_product_fields', 'your_slug_add_product_fields' );
-
-function your_slug_add_product_fields( $product_fields ) {
-	$product_fields[] = [ 'name' => 'tags', 'type' => 'string[]', 'facet' => true ];
-
-	return $product_fields;
-}
-
-```
-
-***Note: While adding new field to schema only the `name` should be different. `type` should be `string[]` and `facet` should always be `true` ***
-
-
-
-#### Update the document data to be indexed
-
-After you have added the field, data for the field should be provided using the filter `cm_tsfwc_data_before_entry` like below:
-
+#### Format the document data to be indexed as Facet
+To add a new Facet you need to add it as .*_attribute_filter, so if you want to add product_tags  you can add it as 
+product_tags_attribute_filter
 ```
 add_filter( 'cm_tsfwc_data_before_entry', 'your_slug_add_data_before_entry', 10, 4 );
 
@@ -267,7 +247,7 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 			$product_tags_arr = []; // Only array can be pushed to the data. When no data, empty array is the must
 		}
 
-		$formatted_data['tags'] = $product_tags_arr;
+		$formatted_data['product_tags_attribute_filter'] = $product_tags_arr;
 	}
 
 	return $formatted_data;
@@ -276,26 +256,22 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 
 ```
 
-***Note: The index for the `$formatted_data` should be same as name of the field added before. For example: name of the field added before is `'tags'` so the index for the `$formatted_data` is also `tags`. ***
-
-***Important: After changing the schema, collection should be deleted and reindexed to work properly.***
-
 ### Displaying the filter
 
-To display the filter on the frontend, use the action `cm_tsfwc_custom_attributes` like below:
+To display the filter on the frontend, use the action hook `cm_tsfwc_custom_attributes` like below:
 
 
 ```
 add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-	echo '<div data-facet_name="tags" data-title ="' . __( "Filter by Tags", 'storefront' ) . '" class="cm-tsfwc-shortcode-tags-attribute-filters"></div>';
+	echo '<div data-facet_name="product_tags_attribute_filter" data-title ="' . __( "Filter by Tags", 'storefront' ) . '" class="cm-tsfwc-shortcode-tags-attribute-filters"></div>';
 }
 
 ```
 
 `data-facet_name`: It should same as the name of the field added before. 
-				   For example: here name of the field added before is `'tags'` so the `data-facet_name` should be `tags`
+				   For example: here name of the field added before is `'product_tags_attribute_filter'` so the `data-facet_name` should be `product_tags_attribute_filter`
 
 `data-title`: Title for the filter
 

@@ -523,15 +523,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-field-to-the-schema" class="md-nav__link">
-    Add field to the schema:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-the-document-data-to-be-indexed" class="md-nav__link">
-    Update the document data to be indexed
+  <a href="#format-the-document-data-to-be-indexed-as-facet" class="md-nav__link">
+    Format the document data to be indexed as Facet
   </a>
   
 </li>
@@ -821,15 +814,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-field-to-the-schema" class="md-nav__link">
-    Add field to the schema:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-the-document-data-to-be-indexed" class="md-nav__link">
-    Update the document data to be indexed
+  <a href="#format-the-document-data-to-be-indexed-as-facet" class="md-nav__link">
+    Format the document data to be indexed as Facet
   </a>
   
 </li>
@@ -1145,20 +1131,9 @@ function your_slug_change_per_page( $per_page_config ) {
 <h3 id="use-case_1">Use Case:</h3>
 <p>Suppose you want to add tags ( or any other custom taxonomy ) filter to the shop/archive page other than the default ones provided by the addon. </p>
 <h3 id="how-to-do-it_1">How to do it:</h3>
-<h4 id="add-field-to-the-schema">Add field to the schema:</h4>
-<p>First you need to add your field to the <code>$product_fields</code> array which is added to the schema using the filter <code>cm_tsfwc_product_fields</code> like this:</p>
-<pre><code>add_filter( 'cm_tsfwc_product_fields', 'your_slug_add_product_fields' );
-
-function your_slug_add_product_fields( $product_fields ) {
-    $product_fields[] = [ 'name' =&gt; 'tags', 'type' =&gt; 'string[]', 'facet' =&gt; true ];
-
-    return $product_fields;
-}
-
-</code></pre>
-<p><strong><em>Note: While adding new field to schema only the <code>name</code> should be different. <code>type</code> should be <code>string[]</code> and <code>facet</code> should always be <code>true</code> </em></strong></p>
-<h4 id="update-the-document-data-to-be-indexed">Update the document data to be indexed</h4>
-<p>After you have added the field, data for the field should be provided using the filter <code>cm_tsfwc_data_before_entry</code> like below:</p>
+<h4 id="format-the-document-data-to-be-indexed-as-facet">Format the document data to be indexed as Facet</h4>
+<p>To add a new Facet you need to add it as .*_attribute_filter, so if you want to add product_tags  you can add it as 
+product_tags_attribute_filter</p>
 <pre><code>add_filter( 'cm_tsfwc_data_before_entry', 'your_slug_add_data_before_entry', 10, 4 );
 
 function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id, $schema_name ) {
@@ -1177,7 +1152,7 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
             $product_tags_arr = []; // Only array can be pushed to the data. When no data, empty array is the must
         }
 
-        $formatted_data['tags'] = $product_tags_arr;
+        $formatted_data['product_tags_attribute_filter'] = $product_tags_arr;
     }
 
     return $formatted_data;
@@ -1185,19 +1160,17 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 }
 
 </code></pre>
-<p><strong><em>Note: The index for the <code>$formatted_data</code> should be same as name of the field added before. For example: name of the field added before is <code>'tags'</code> so the index for the <code>$formatted_data</code> is also <code>tags</code>. </em></strong></p>
-<p><strong><em>Important: After changing the schema, collection should be deleted and reindexed to work properly.</em></strong></p>
 <h3 id="displaying-the-filter">Displaying the filter</h3>
-<p>To display the filter on the frontend, use the action <code>cm_tsfwc_custom_attributes</code> like below:</p>
+<p>To display the filter on the frontend, use the action hook <code>cm_tsfwc_custom_attributes</code> like below:</p>
 <pre><code>add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-    echo '&lt;div data-facet_name=&quot;tags&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot;&gt;&lt;/div&gt;';
+    echo '&lt;div data-facet_name=&quot;product_tags_attribute_filter&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot;&gt;&lt;/div&gt;';
 }
 
 </code></pre>
 <p><code>data-facet_name</code>: It should same as the name of the field added before. 
-                   For example: here name of the field added before is <code>'tags'</code> so the <code>data-facet_name</code> should be <code>tags</code></p>
+                   For example: here name of the field added before is <code>'product_tags_attribute_filter'</code> so the <code>data-facet_name</code> should be <code>product_tags_attribute_filter</code></p>
 <p><code>data-title</code>: Title for the filter</p>
 <h2 id="adding-static-code-widgets-to-the-sidebar">Adding static code / widgets to the sidebar</h2>
 <h3 id="use-case_2">Use Case:</h3>
