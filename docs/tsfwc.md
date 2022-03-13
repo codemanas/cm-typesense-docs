@@ -129,6 +129,11 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 * Description: Show the featured products first on the listing while searching or filtering
 * Default value: "no"
 
+***query_by***
+
+* Values: string (Advanced Usage [the typesense documentation](https://typesense.org/docs/0.22.1/api/documents.html#search))
+* Description: Query results by these fields
+* Default: `post_title,post_content`
 
 ## Template Overwriting
 
