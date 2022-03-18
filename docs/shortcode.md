@@ -67,3 +67,8 @@ Description: Add the Autocomplete form wherever you may want to. There are no ot
 - Values: Any String
 - Description: Determines the placeholder for search field
 - Default: "Search for"
+
+####query_by
+- Values: Any String
+- Description: Determines the search query
+- Default: `post_title,post_content`
