@@ -12,5 +12,6 @@ nav:
       - Customizing Widgets: customizing-instant-search-widgets.md
       - Changing Widgets: changing-widgets.md
       - Adding Custom Post Types: advanced-custom-post-types.md
+      - Adding Taxonomy as Collection: advanced-custom-taxonomy.md
   - Addons:
       - Typsesense Search for WooCommerce: tsfwc.md
