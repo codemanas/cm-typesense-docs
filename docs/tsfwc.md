@@ -270,16 +270,20 @@ To display the filter on the frontend, use the action hook `cm_tsfwc_custom_attr
 add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-	echo '<div data-facet_name="product_tags_attribute_filter" data-title ="' . __( "Filter by Tags", 'storefront' ) . '" class="cm-tsfwc-shortcode-tags-attribute-filters"></div>';
+	echo '<div data-facet_name="product_tags_attribute_filter" data-title ="' . __( "Filter by Tags", 'storefront' ) . '" class="cm-tsfwc-shortcode-tags-attribute-filters" data-filter_type="refinementList"></div>';
 }
 
 ```
 
-`data-facet_name`: It should same as the name of the field added before. 
+* `data-facet_name`: It should same as the name of the field added before. 
 				   For example: here name of the field added before is `'product_tags_attribute_filter'` so the `data-facet_name` should be `product_tags_attribute_filter`
 
-`data-title`: Title for the filter
+* `data-title`: Title for the filter
 
+* `data-filter_type`: Type of filter to use
+	* Values: `refinementList` `rangeSlider` `rangeInput` `menu`
+
+	* *Note:  For `rangeSlider` and `rangeInput` the schema for field must be `int64`*
 
 ## Adding static code / widgets to the sidebar
 
@@ -314,3 +318,70 @@ function mytheme_hide_attribute_facet() {
 	return 'book-author';
 }
 ```
+
+## Changing attribute widget type
+
+### Changing type of widget in Category filter
+
+```
+function your_slug_change_cat_filter_type( $filterType ) {
+    
+    $filterType = 'menu';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_category_filter_type', 'your_slug_change_cat_filter_type' );
+```
+
+** Acceptable filter type = `refinementList`, `menu` **
+
+### Changing type of widget in Price filter
+
+```
+function your_slug_change_price_filter_type( $filterType ) {
+      
+    $filterType = 'rangeSlider';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_price_filter_type', 'your_slug_change_price_filter_type' );
+```
+
+** Acceptable filter type = `rangeSlider`, `rangeInput` **
+
+### Changing type of widget in Rating filter
+
+```
+function your_slug_change_rating_filter_type( $filterType ) {
+      
+    $filterType = 'rangeSlider';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_rating_filter_type', 'your_slug_change_rating_filter_type' );
+```
+
+** Acceptable filter type = `ratingMenu`, `rangeSlider`, `rangeInput` **
+
+### Changing type of widget in Attribute filters
+
+```
+function your_slug_change_attribute_filter_type( $filterType, $attributeName ) {
+
+    if ( $attributeName == 'size' ) {
+        $filterType = 'menu';
+    }
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_attribute_filter_type', 'your_slug_change_attribute_filter_type', 10, 2 );
+```
+
+** Acceptable filter type = `refinementList`, `menu` `rangeInput`, `rangeSlider` **
+
+*Note:  For `rangeSlider` and `rangeInput` the schema for field must be `int64`*
+
