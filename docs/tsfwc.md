@@ -270,7 +270,13 @@ To display the filter on the frontend, use the action hook `cm_tsfwc_custom_attr
 add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-	echo '<div data-facet_name="product_tags_attribute_filter" data-title ="' . __( "Filter by Tags", 'storefront' ) . '" class="cm-tsfwc-shortcode-tags-attribute-filters" data-filter_type="refinementList"></div>';
+	echo '<div 
+	data-facet_name="product_tags_attribute_filter" 
+	data-title ="' . __( "Filter by Tags", 'storefront' ) . '" 
+	class="cm-tsfwc-shortcode-tags-attribute-filters" 
+	data-filter_type="refinementList"
+    data-settings="' . _wp_specialchars( json_encode( [ "searchable" => false ] ), ENT_QUOTES, "UTF-8", true ) . '"
+	></div>';
 }
 
 ```
@@ -385,3 +391,77 @@ add_filter( 'cm_tsfwc_attribute_filter_type', 'your_slug_change_attribute_filter
 
 *Note:  For `rangeSlider` and `rangeInput` the schema for field must be `int64`*
 
+## Adding/changing facets settings
+
+### Changing facet settings in Category filter
+
+```
+function your_slug_change_facet_setting( $filterSettings ) {
+      
+    $filterSettings = [ 'searchable' => true ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_category_facet_settings', 'your_slug_change_facet_setting' );
+```
+
+See <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/" target="_blank">here</a> for available options.
+
+*Note: `container` and `attribute` are not overridable*
+
+
+### Changing facet settings in Price filter
+
+```
+function your_slug_change_facet_setting( $filterSettings ) {
+      
+    $filterSettings = [ 'pips' => false ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_price_facet_settings', 'your_slug_change_facet_setting' );
+```
+
+See <a href="https://www.algolia.com/doc/api-reference/widgets/range-slider/js/" target="_blank">here</a> for available options.
+
+*Note: `container` and `attribute` are not overridable*
+
+
+### Changing facet settings in Rating filter
+
+```
+function your_slug_change_facet_setting( $filterSettings ) {
+      
+    $filterSettings = [ 'max' => 5 ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_rating_facet_settings', 'your_slug_change_facet_setting' );
+```
+
+See <a href="https://www.algolia.com/doc/api-reference/widgets/rating-menu/js/" target="_blank">here</a> for available options.
+
+*Note: `container` and `attribute` are not overridable*
+
+
+### Changing facet settings in Custom Attribute filter
+
+```
+function your_slug_change_facet_setting( $filterSettings, $attrName ) {
+    
+    if( 'color' == $attrName ) {
+    	$filterSettings = [ 'searchable' => true ];
+	}
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_attribute_facet_settings', 'your_slug_change_facet_setting', 10, 2 );
+```
+
+See <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/" target="_blank">here</a> for available options.
+
+*Note: `container` and `attribute` are not overridable*
