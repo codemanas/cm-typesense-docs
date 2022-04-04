@@ -299,6 +299,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced-custom-taxonomy/" class="md-nav__link">
+      Adding Taxonomy as Collection
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -619,6 +631,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-attribute-widget-type" class="md-nav__link">
+    Changing attribute widget type
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing attribute widget type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-category-filter" class="md-nav__link">
+    Changing type of widget in Category filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-price-filter" class="md-nav__link">
+    Changing type of widget in Price filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-rating-filter" class="md-nav__link">
+    Changing type of widget in Rating filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-attribute-filters" class="md-nav__link">
+    Changing type of widget in Attribute filters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -910,6 +963,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-attribute-widget-type" class="md-nav__link">
+    Changing attribute widget type
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing attribute widget type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-category-filter" class="md-nav__link">
+    Changing type of widget in Category filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-price-filter" class="md-nav__link">
+    Changing type of widget in Price filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-rating-filter" class="md-nav__link">
+    Changing type of widget in Rating filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-type-of-widget-in-attribute-filters" class="md-nav__link">
+    Changing type of widget in Attribute filters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1052,6 +1146,12 @@
 <li>Description: Show the featured products first on the listing while searching or filtering</li>
 <li>Default value: "no"</li>
 </ul>
+<p><strong><em>query_by</em></strong></p>
+<ul>
+<li>Values: string (Advanced Usage <a href="https://typesense.org/docs/0.22.1/api/documents.html#search">the typesense documentation</a>)</li>
+<li>Description: Query results by these fields</li>
+<li>Default: <code>post_title,post_content</code></li>
+</ul>
 <h2 id="template-overwriting">Template Overwriting</h2>
 <p>Overriding the template allows you to change the output for the product listing design as you need to.</p>
 <p>The templates are in the plugin <code>typesense-search-for-woocommerce/templates</code> and you can override it by copying it to your theme.</p>
@@ -1165,13 +1265,30 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 <pre><code>add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-    echo '&lt;div data-facet_name=&quot;product_tags_attribute_filter&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot;&gt;&lt;/div&gt;';
+    echo '&lt;div data-facet_name=&quot;product_tags_attribute_filter&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot; data-filter_type=&quot;refinementList&quot;&gt;&lt;/div&gt;';
 }
 
 </code></pre>
+<ul>
+<li>
 <p><code>data-facet_name</code>: It should same as the name of the field added before. 
                    For example: here name of the field added before is <code>'product_tags_attribute_filter'</code> so the <code>data-facet_name</code> should be <code>product_tags_attribute_filter</code></p>
+</li>
+<li>
 <p><code>data-title</code>: Title for the filter</p>
+</li>
+<li>
+<p><code>data-filter_type</code>: Type of filter to use</p>
+<ul>
+<li>
+<p>Values: <code>refinementList</code> <code>rangeSlider</code> <code>rangeInput</code> <code>menu</code></p>
+</li>
+<li>
+<p><em>Note:  For <code>rangeSlider</code> and <code>rangeInput</code> the schema for field must be <code>int64</code></em></p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="adding-static-code-widgets-to-the-sidebar">Adding static code / widgets to the sidebar</h2>
 <h3 id="use-case_2">Use Case:</h3>
 <p>Suppose you want to add default WooCommerce widgets like <em>Top Rated Products</em> below the filters</p>
@@ -1194,6 +1311,54 @@ function mytheme_hide_attribute_facet() {
     return 'book-author';
 }
 </code></pre>
+<h2 id="changing-attribute-widget-type">Changing attribute widget type</h2>
+<h3 id="changing-type-of-widget-in-category-filter">Changing type of widget in Category filter</h3>
+<pre><code>function your_slug_change_cat_filter_type( $filterType ) {
+
+    $filterType = 'menu';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_category_filter_type', 'your_slug_change_cat_filter_type' );
+</code></pre>
+<p><strong> Acceptable filter type = <code>refinementList</code>, <code>menu</code> </strong></p>
+<h3 id="changing-type-of-widget-in-price-filter">Changing type of widget in Price filter</h3>
+<pre><code>function your_slug_change_price_filter_type( $filterType ) {
+
+    $filterType = 'rangeSlider';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_price_filter_type', 'your_slug_change_price_filter_type' );
+</code></pre>
+<p><strong> Acceptable filter type = <code>rangeSlider</code>, <code>rangeInput</code> </strong></p>
+<h3 id="changing-type-of-widget-in-rating-filter">Changing type of widget in Rating filter</h3>
+<pre><code>function your_slug_change_rating_filter_type( $filterType ) {
+
+    $filterType = 'rangeSlider';
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_rating_filter_type', 'your_slug_change_rating_filter_type' );
+</code></pre>
+<p><strong> Acceptable filter type = <code>ratingMenu</code>, <code>rangeSlider</code>, <code>rangeInput</code> </strong></p>
+<h3 id="changing-type-of-widget-in-attribute-filters">Changing type of widget in Attribute filters</h3>
+<pre><code>function your_slug_change_attribute_filter_type( $filterType, $attributeName ) {
+
+    if ( $attributeName == 'size' ) {
+        $filterType = 'menu';
+    }
+
+    return $filterType;
+}
+
+add_filter( 'cm_tsfwc_attribute_filter_type', 'your_slug_change_attribute_filter_type', 10, 2 );
+</code></pre>
+<p><strong> Acceptable filter type = <code>refinementList</code>, <code>menu</code> <code>rangeInput</code>, <code>rangeSlider</code> </strong></p>
+<p><em>Note:  For <code>rangeSlider</code> and <code>rangeInput</code> the schema for field must be <code>int64</code></em></p>
                 
               
               
@@ -1212,7 +1377,7 @@ function mytheme_hide_attribute_facet() {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../advanced-custom-post-types/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../advanced-custom-taxonomy/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1221,7 +1386,7 @@ function mytheme_hide_attribute_facet() {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Adding Custom Post Types
+                Adding Taxonomy as Collection
               </div>
             </div>
           </a>
