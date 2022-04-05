@@ -672,6 +672,95 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addingchanging-facets-settings" class="md-nav__link">
+    Adding/changing facets settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding/changing facets settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-category-filter" class="md-nav__link">
+    Changing facet settings in Category filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-price-filter" class="md-nav__link">
+    Changing facet settings in Price filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-rating-filter" class="md-nav__link">
+    Changing facet settings in Rating filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-custom-attribute-filter" class="md-nav__link">
+    Changing facet settings in Custom Attribute filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wpml-integration" class="md-nav__link">
+    WPML Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="WPML Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wpml-translation-modes-and-tools" class="md-nav__link">
+    WPML Translation modes and tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translating-content" class="md-nav__link">
+    Translating Content:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing-products_1" class="md-nav__link">
+    Indexing Products:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translating-plugin-strings" class="md-nav__link">
+    Translating Plugin Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1004,6 +1093,95 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addingchanging-facets-settings" class="md-nav__link">
+    Adding/changing facets settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding/changing facets settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-category-filter" class="md-nav__link">
+    Changing facet settings in Category filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-price-filter" class="md-nav__link">
+    Changing facet settings in Price filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-rating-filter" class="md-nav__link">
+    Changing facet settings in Rating filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-facet-settings-in-custom-attribute-filter" class="md-nav__link">
+    Changing facet settings in Custom Attribute filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wpml-integration" class="md-nav__link">
+    WPML Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="WPML Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wpml-translation-modes-and-tools" class="md-nav__link">
+    WPML Translation modes and tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translating-content" class="md-nav__link">
+    Translating Content:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing-products_1" class="md-nav__link">
+    Indexing Products:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translating-plugin-strings" class="md-nav__link">
+    Translating Plugin Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1265,7 +1443,13 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 <pre><code>add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
-    echo '&lt;div data-facet_name=&quot;product_tags_attribute_filter&quot; data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot; data-filter_type=&quot;refinementList&quot;&gt;&lt;/div&gt;';
+    echo '&lt;div 
+    data-facet_name=&quot;product_tags_attribute_filter&quot; 
+    data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; 
+    class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot; 
+    data-filter_type=&quot;refinementList&quot;
+    data-settings=&quot;' . _wp_specialchars( json_encode( [ &quot;searchable&quot; =&gt; false ] ), ENT_QUOTES, &quot;UTF-8&quot;, true ) . '&quot;
+    &gt;&lt;/div&gt;';
 }
 
 </code></pre>
@@ -1359,6 +1543,100 @@ add_filter( 'cm_tsfwc_attribute_filter_type', 'your_slug_change_attribute_filter
 </code></pre>
 <p><strong> Acceptable filter type = <code>refinementList</code>, <code>menu</code> <code>rangeInput</code>, <code>rangeSlider</code> </strong></p>
 <p><em>Note:  For <code>rangeSlider</code> and <code>rangeInput</code> the schema for field must be <code>int64</code></em></p>
+<h2 id="addingchanging-facets-settings">Adding/changing facets settings</h2>
+<h3 id="changing-facet-settings-in-category-filter">Changing facet settings in Category filter</h3>
+<pre><code>function your_slug_change_facet_setting( $filterSettings ) {
+
+    $filterSettings = [ 'searchable' =&gt; true ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_category_facet_settings', 'your_slug_change_facet_setting' );
+</code></pre>
+<p>See <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/" target="_blank">here</a> for available options.</p>
+<p><em>Note: <code>container</code> and <code>attribute</code> are not overridable</em></p>
+<h3 id="changing-facet-settings-in-price-filter">Changing facet settings in Price filter</h3>
+<pre><code>function your_slug_change_facet_setting( $filterSettings ) {
+
+    $filterSettings = [ 'pips' =&gt; false ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_price_facet_settings', 'your_slug_change_facet_setting' );
+</code></pre>
+<p>See <a href="https://www.algolia.com/doc/api-reference/widgets/range-slider/js/" target="_blank">here</a> for available options.</p>
+<p><em>Note: <code>container</code> and <code>attribute</code> are not overridable</em></p>
+<h3 id="changing-facet-settings-in-rating-filter">Changing facet settings in Rating filter</h3>
+<pre><code>function your_slug_change_facet_setting( $filterSettings ) {
+
+    $filterSettings = [ 'max' =&gt; 5 ];
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_rating_facet_settings', 'your_slug_change_facet_setting' );
+</code></pre>
+<p>See <a href="https://www.algolia.com/doc/api-reference/widgets/rating-menu/js/" target="_blank">here</a> for available options.</p>
+<h3 id="changing-facet-settings-in-custom-attribute-filter">Changing facet settings in Custom Attribute filter</h3>
+<pre><code>function your_slug_change_facet_setting( $filterSettings, $attrName ) {
+
+    if( 'color' == $attrName ) {
+        $filterSettings = [ 'searchable' =&gt; true ];
+    }
+
+    return $filterSettings;
+}
+
+add_filter( 'cm_tsfwc_attribute_facet_settings', 'your_slug_change_facet_setting', 10, 2 );
+</code></pre>
+<p>See <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/" target="_blank">here</a> for available options.</p>
+<p><em>Note: <code>container</code> and <code>attribute</code> are not overridable</em></p>
+<h2 id="wpml-integration">WPML Integration</h2>
+<p>As of version 1.2.4 of Typesense search for WooCommerce - the plugin is compatible with WPML and adds features to integrate with WPML + WooCommerce
+The plugins required for WPML Integration are :</p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<ul>
+<li><a href="https://wpml.org/documentation/related-projects/woocommerce-multilingual/">WooCommerce Multilingual</a></li>
+<li><a href="https://wpml.org/">WPML 4.4.11 or aboves</a></li>
+<li>WPML String Translation</li>
+<li>WPML Translation Management (not needed for WooCommerce 3.9.0)</li>
+<li>Typesense Search for WooCommerce</li>
+</ul>
+<p>If you want to use different media (images) for different translations of a product, you need to install <a href="https://wpml.org/documentation/getting-started-guide/media-translation/">WPML Media</a>.</p>
+<h3 id="wpml-translation-modes-and-tools">WPML Translation modes and tools</h3>
+<p>There are two different translation modes while using WPML. Please see WPML documentation for detailed information.</p>
+<ul>
+<li><a href="https://wpml.org/documentation/getting-started-guide/#translate-everything">Translate Everything</a> :
+  All of the site’s main content will be automatically translated into all secondary languages as content is published
+  or updated. Translations can then be reviewed on the front-end and edited by the user (or local translator) if
+  needed.</li>
+<li><a href="https://wpml.org/documentation/getting-started-guide/#translate-everything">Translate Some</a> :
+  Users can pick and choose what to translate, when to translate it, and who will translate it.
+  This mode allows for content to be translated manually, translated via WPML’s Advanced Translation Editor, translated by professional translation services , or even translated
+  by a team of local translators.</li>
+</ul>
+<h3 id="translating-content">Translating Content:</h3>
+<p>For translation of content - there is nothing new you need to do on the typesense plugin. Based on your setup the WooCommerce Products, Pages (checkout, cart, my-account etc), translations are handled by the WooCommerce Multilingual plugin - please see <a href="https://wpml.org/documentation/related-projects/woocommerce-multilingual/#translating-products">translating products</a></p>
+<p>What is required for Typesense integration is only on initial installation. You would need to index your products for each language you have.</p>
+<h3 id="indexing-products_1">Indexing Products:</h3>
+<p>To index products you will need to go to WP Admin &gt; Typesense
+Here you will be shown the Typesense Search Config settings and you can index the products.
+The only difference here is to switch language on your admin screen for each of your language to index your products.
+This step - is a one time step - meaning it only needs to be done once - when the plugin is initially configured.
+Please see video for a small walk through.</p>
+<div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/696013350?h=1446c77049&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Indexing Products - WPML Integration"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<p>Once the indexing is complete, all your current products will show up in the shop and users will be show the products based on the current language the user has selected.
+For new products - they will be indexed to the correct translation - when they are added / updated. And will be removed if they are deleted / status visibility of product is changed.</p>
+<h3 id="translating-plugin-strings">Translating Plugin Strings</h3>
+<p>Some strings are hardcoded into the plugin and will require string translation. You can see detailed documentation for string translation <a href="https://wpml.org/documentation/getting-started-guide/string-translation/">here</a>.
+Please see this short video on how to translate strings.</p>
+<div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/696020799?h=790e135fe5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="translating-plugin-strings"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<p><em>Note: <code>container</code> and <code>attribute</code> are not overridable</em></p>
                 
               
               
