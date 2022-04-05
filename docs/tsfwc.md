@@ -444,9 +444,6 @@ add_filter( 'cm_tsfwc_rating_facet_settings', 'your_slug_change_facet_setting' )
 
 See <a href="https://www.algolia.com/doc/api-reference/widgets/rating-menu/js/" target="_blank">here</a> for available options.
 
-*Note: `container` and `attribute` are not overridable*
-
-
 ### Changing facet settings in Custom Attribute filter
 
 ```
@@ -463,5 +460,51 @@ add_filter( 'cm_tsfwc_attribute_facet_settings', 'your_slug_change_facet_setting
 ```
 
 See <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/" target="_blank">here</a> for available options.
+
+*Note: `container` and `attribute` are not overridable*
+
+##WPML Integration
+As of version 1.2.4 of Typesense search for WooCommerce - the plugin is compatible with WPML and adds features to integrate with WPML + WooCommerce
+The plugins required for WPML Integration are :
+### Pre-requisites
+- [WooCommerce Multilingual](https://wpml.org/documentation/related-projects/woocommerce-multilingual/)
+- [WPML 4.4.11 or aboves](https://wpml.org/)
+- WPML String Translation
+- WPML Translation Management (not needed for WooCommerce 3.9.0)
+- Typesense Search for WooCommerce
+
+If you want to use different media (images) for different translations of a product, you need to install [WPML Media](https://wpml.org/documentation/getting-started-guide/media-translation/).
+
+###WPML Translation modes and tools
+There are two different translation modes while using WPML. Please see WPML documentation for detailed information.
+
+- [Translate Everything](https://wpml.org/documentation/getting-started-guide/#translate-everything) :
+  All of the site’s main content will be automatically translated into all secondary languages as content is published
+  or updated. Translations can then be reviewed on the front-end and edited by the user (or local translator) if
+  needed.
+- [Translate Some](https://wpml.org/documentation/getting-started-guide/#translate-everything) :
+  Users can pick and choose what to translate, when to translate it, and who will translate it.
+  This mode allows for content to be translated manually, translated via WPML’s Advanced Translation Editor, translated by professional translation services , or even translated
+  by a team of local translators.
+
+###Translating Content:
+For translation of content - there is nothing new you need to do on the typesense plugin. Based on your setup the WooCommerce Products, Pages (checkout, cart, my-account etc), translations are handled by the WooCommerce Multilingual plugin - please see [translating products](https://wpml.org/documentation/related-projects/woocommerce-multilingual/#translating-products)
+
+What is required for Typesense integration is only on initial installation. You would need to index your products for each language you have.
+
+###Indexing Products:
+To index products you will need to go to WP Admin > Typesense
+Here you will be shown the Typesense Search Config settings and you can index the products.
+The only difference here is to switch language on your admin screen for each of your language to index your products.
+This step - is a one time step - meaning it only needs to be done once - when the plugin is initially configured.
+Please see video for a small walk through.
+<div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/696013350?h=1446c77049&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Indexing Products - WPML Integration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+Once the indexing is complete, all your current products will show up in the shop and users will be show the products based on the current language the user has selected.
+For new products - they will be indexed to the correct translation - when they are added / updated. And will be removed if they are deleted / status visibility of product is changed.
+
+###Translating Plugin Strings
+Some strings are hardcoded into the plugin and will require string translation. You can see detailed documentation for string translation [here](https://wpml.org/documentation/getting-started-guide/string-translation/).
+Please see this short video on how to translate strings.
+<div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/696020799?h=790e135fe5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="translating-plugin-strings"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 *Note: `container` and `attribute` are not overridable*
