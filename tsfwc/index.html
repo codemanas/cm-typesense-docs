@@ -582,8 +582,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cm_tsfwc_before_filter_panel_end-hook" class="md-nav__link">
-    Use cm_tsfwc_before_filter_panel_end hook
+  <a href="#use-cm_tsfwc_filter_panel_output-hook" class="md-nav__link">
+    Use cm_tsfwc_filter_panel_output hook
   </a>
   
 </li>
@@ -1003,8 +1003,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cm_tsfwc_before_filter_panel_end-hook" class="md-nav__link">
-    Use cm_tsfwc_before_filter_panel_end hook
+  <a href="#use-cm_tsfwc_filter_panel_output-hook" class="md-nav__link">
+    Use cm_tsfwc_filter_panel_output hook
   </a>
   
 </li>
@@ -1477,8 +1477,8 @@ function your_slug_add_custom_attr() {
 <h3 id="use-case_2">Use Case:</h3>
 <p>Suppose you want to add default WooCommerce widgets like <em>Top Rated Products</em> below the filters</p>
 <h3 id="how-to-do-it_2">How to do it:</h3>
-<h4 id="use-cm_tsfwc_before_filter_panel_end-hook">Use <code>cm_tsfwc_before_filter_panel_end</code> hook</h4>
-<pre><code>add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
+<h4 id="use-cm_tsfwc_filter_panel_output-hook">Use <code>cm_tsfwc_filter_panel_output</code> hook</h4>
+<pre><code>add_action( 'cm_tsfwc_filter_panel_output', 'mytheme_add_widgets',40 );
 
 function mytheme_add_widgets() {
     the_widget( 'WC_Widget_Top_Rated_Products' );
@@ -1492,7 +1492,7 @@ function mytheme_add_widgets() {
 <pre><code>add_filter( 'cm_tsfwc_attribute_facet_skip', 'mytheme_hide_attribute_facet' );
 
 function mytheme_hide_attribute_facet() {
-    return 'book-author';
+    return ['book-author'];
 }
 </code></pre>
 <h2 id="changing-attribute-widget-type">Changing attribute widget type</h2>
