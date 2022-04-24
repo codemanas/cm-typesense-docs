@@ -298,10 +298,10 @@ Suppose you want to add default WooCommerce widgets like *Top Rated Products* be
 
 ### How to do it:
 
-#### Use `cm_tsfwc_before_filter_panel_end` hook
+#### Use `cm_tsfwc_filter_panel_output` hook
 
 ```
-add_action( 'cm_tsfwc_add_widgets', 'mytheme_add_widgets' );
+add_action( 'cm_tsfwc_filter_panel_output', 'mytheme_add_widgets',40 );
 
 function mytheme_add_widgets() {
 	the_widget( 'WC_Widget_Top_Rated_Products' );
@@ -321,7 +321,7 @@ Suppose you want to remove Filter by `size` filter.
 add_filter( 'cm_tsfwc_attribute_facet_skip', 'mytheme_hide_attribute_facet' );
 
 function mytheme_hide_attribute_facet() {
-	return 'book-author';
+	return ['book-author'];
 }
 ```
 
