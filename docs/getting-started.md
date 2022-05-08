@@ -43,7 +43,7 @@ Here you can
 
 1. Enable which post types should be indexed
 2. Bulk index the selected post types
-3. Hijack WordPress Search to show autocomplete
+3. Replace WordPress Search to show autocomplete or instant search popup
 
 ### Enable Post Types
 This option allows you to select which post types to index.
@@ -54,8 +54,20 @@ Pro version of the plugin will be needed to index custom post types.
 Bulk Index option allows you to index all posts(post types) at once.
 Indexing means they will add the document into Typesense instant to be easily retrieved.
 
-### Hijack WordPress Search
+### Replace WordPress Search
 When this option is enabled it will replace all search forms that use
-default WordPress search with autocomplete.
+default WordPress search with either Instant Search popup or autocomplete.
 Developer Note: It will replace all calls for get_search_form() and the default WordPress search widget or "core/search" block used
+
+#### Instant Search Popup
+Instant Search - replaces all instance of default WordPress search - search forms etc with a popup of instant search.
+You can customize the appearance of the search by going to appearance > customize > Typesense Search
+![Popup](img/instan-search-popup.png)
+
+![Customize Settings](img/customizer-instant-popup.png)
+
+
+#### Autocomplete
+Replaces all search forms with Autocomplete. See example here [https://typesense.codemanas.com/autocomplete/](Autocomplete)
+
 

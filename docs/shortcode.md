@@ -39,8 +39,8 @@ If multiple sources are enabled - filtering is disabled.
 - Default: `show`
 
 ####pagination
-- Values: `show` or `hide`
-- Description: Determines whether to show or hide the pagination for results
+- Values: `show` or `infinite` or `hide`
+- Description: Determines whether to show or hide the pagination for results, select infinite for load more implementation
 - Default: `show`
 
 ####query_by
