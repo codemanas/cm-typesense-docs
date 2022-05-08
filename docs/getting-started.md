@@ -66,6 +66,14 @@ You can customize the appearance of the search by going to appearance > customiz
 
 ![Customize Settings](img/customizer-instant-popup.png)
 
+To add a custom trigger - you can add the class "cm-swt-instant-search-popup--trigger" to your button / svg / anchor tag to trigger the popup
+Something like the following:
+```
+<a href="#" class="cm-swt-instant-search-popup--trigger cm-swt-instant-search-popup--trigger-default"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg></a>
+```
+
 
 #### Autocomplete
 Replaces all search forms with Autocomplete. See example here [https://typesense.codemanas.com/autocomplete/](Autocomplete)

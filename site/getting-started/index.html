@@ -280,9 +280,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hijack-wordpress-search" class="md-nav__link">
-    Hijack WordPress Search
+  <a href="#replace-wordpress-search" class="md-nav__link">
+    Replace WordPress Search
   </a>
+  
+    <nav class="md-nav" aria-label="Replace WordPress Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instant-search-popup" class="md-nav__link">
+    Instant Search Popup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocomplete" class="md-nav__link">
+    Autocomplete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -519,9 +539,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hijack-wordpress-search" class="md-nav__link">
-    Hijack WordPress Search
+  <a href="#replace-wordpress-search" class="md-nav__link">
+    Replace WordPress Search
   </a>
+  
+    <nav class="md-nav" aria-label="Replace WordPress Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instant-search-popup" class="md-nav__link">
+    Instant Search Popup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocomplete" class="md-nav__link">
+    Autocomplete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -581,7 +621,7 @@ Your WordPress install will now be able to connect to your typensese instance.</
 <ol>
 <li>Enable which post types should be indexed</li>
 <li>Bulk index the selected post types</li>
-<li>Hijack WordPress Search to show autocomplete</li>
+<li>Replace WordPress Search to show autocomplete or instant search popup</li>
 </ol>
 <h3 id="enable-post-types">Enable Post Types</h3>
 <p>This option allows you to select which post types to index.
@@ -590,10 +630,23 @@ Pro version of the plugin will be needed to index custom post types.</p>
 <h3 id="bulk-index">Bulk Index</h3>
 <p>Bulk Index option allows you to index all posts(post types) at once.
 Indexing means they will add the document into Typesense instant to be easily retrieved.</p>
-<h3 id="hijack-wordpress-search">Hijack WordPress Search</h3>
+<h3 id="replace-wordpress-search">Replace WordPress Search</h3>
 <p>When this option is enabled it will replace all search forms that use
-default WordPress search with autocomplete.
+default WordPress search with either Instant Search popup or autocomplete.
 Developer Note: It will replace all calls for get_search_form() and the default WordPress search widget or "core/search" block used</p>
+<h4 id="instant-search-popup">Instant Search Popup</h4>
+<p>Instant Search - replaces all instance of default WordPress search - search forms etc with a popup of instant search.
+You can customize the appearance of the search by going to appearance &gt; customize &gt; Typesense Search
+<img alt="Popup" src="../img/instan-search-popup.png" /></p>
+<p><img alt="Customize Settings" src="../img/customizer-instant-popup.png" /></p>
+<p>To add a custom trigger - you can add the class "cm-swt-instant-search-popup--trigger" to your button / svg / anchor tag to trigger the popup
+Something like the following:</p>
+<pre><code>&lt;a href=&quot;#&quot; class=&quot;cm-swt-instant-search-popup--trigger cm-swt-instant-search-popup--trigger-default&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-6 w-6&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;
+  &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z&quot; /&gt;
+&lt;/svg&gt;&lt;/a&gt;
+</code></pre>
+<h4 id="autocomplete">Autocomplete</h4>
+<p>Replaces all search forms with Autocomplete. See example here <a href="Autocomplete">https://typesense.codemanas.com/autocomplete/</a></p>
                 
               
               
