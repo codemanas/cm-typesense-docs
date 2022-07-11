@@ -508,3 +508,20 @@ Please see this short video on how to translate strings.
 <div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/696020799?h=790e135fe5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="translating-plugin-strings"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 *Note: `container` and `attribute` are not overridable*
+
+## Making category menu filter a hierarchical menu
+
+Hierarchical menu is a navigaton based on a hierarchy of attributes like category and it's subcategories. See below for example:
+
+![Hierarchical Menu](img/hierarchical-menu.png)
+
+From version `1.3.5`, we have added an option to change the defalut category menu filter to hierarchical menu. Follow the below steps:
+
+1. Go to **Dashboard -> Typesense -> WooCommerce**
+2. In **Advance Settings**, enable the **Make the default Category filter hierarchical menu**
+3. Click **Save Changes** button
+4. After saving, you need to re-index your Products from **Typesense->Typesense** in **Search Configuration** tab.
+
+<span style="color: maroon;">*Please note that enabling this option will be resource heavy and may make your backend slow.*</span>
+
+*This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have repeat the proess and index again.*
