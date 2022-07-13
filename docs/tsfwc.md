@@ -525,3 +525,42 @@ From version `1.3.5`, we have added an option to change the defalut category men
 <span style="color: maroon;">*Please note that enabling this option will be resource heavy and may make your backend slow.*</span>
 
 *This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have repeat the proess and index again.*
+
+
+## Additional search parameters for default search configuration
+
+From version `1.3.7`, you can configure additional search parameters for both **Instant search** and **Autocomplete** using the filter hooks mentioned below:
+
+`cm_tsfwc_additional_search_params` -  Configure instant search additional search parameters
+
+
+`cm_tsfwc_additional_autocomplete_params` - Configure autocomplete search additional search parameters
+
+Example code:
+
+
+```
+add_filter( 'cm_tsfwc_additional_search_params', 'theme_slug_alter_search_params' );
+function theme_slug_alter_search_params() {
+	return [
+		'hidden_hits' => 3662,
+		// 'query_by_weights' => '1,2', 
+		// 'query_by' => "post_content,post_title",
+		// 'sort_by' => 'total_sales:asc', // work only with numerical fields
+		// 'filter_by' => 'post_title: test',
+		// 'facet_by' => 'category,prices', // can not override so dont work
+		// 'max_facet_values' => 1, // can not override so don't work
+		// 'facet_query' => 'category_lvl0: Alaram',
+		// 'num_typos' => 2,
+		// 'page' => 2, // cannot override so don't work
+		// 'group_by' => 'category',
+		// 'highlightFullFields' => 'post_title,post_content,test',
+		// 'include_fields' => 'price,prices',
+		// 'pinned_hits' => '3662:2',
+	];
+}
+```
+
+You can refer here: [https://typesense.org/docs/0.23.1/api/search.html#search-parameters](https://typesense.org/docs/0.23.1/api/search.html#search-parameters) for additional parameters. 
+
+*Note: Some parameters like `facet_by, q, max_facet_values, page` can not be overwritten. Others can be passed as required.*
