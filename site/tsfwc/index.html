@@ -761,6 +761,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#making-category-menu-filter-a-hierarchical-menu" class="md-nav__link">
+    Making category menu filter a hierarchical menu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-search-parameters-for-default-search-configuration" class="md-nav__link">
+    Additional search parameters for default search configuration
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1179,6 +1193,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-category-menu-filter-a-hierarchical-menu" class="md-nav__link">
+    Making category menu filter a hierarchical menu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-search-parameters-for-default-search-configuration" class="md-nav__link">
+    Additional search parameters for default search configuration
+  </a>
   
 </li>
       
@@ -1637,6 +1665,45 @@ Please see this short video on how to translate strings.</p>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 <p><em>Note: <code>container</code> and <code>attribute</code> are not overridable</em></p>
+<h2 id="making-category-menu-filter-a-hierarchical-menu">Making category menu filter a hierarchical menu</h2>
+<p>Hierarchical menu is a navigaton based on a hierarchy of attributes like category and it's subcategories. See below for example:</p>
+<p><img alt="Hierarchical Menu" src="../img/hierarchical-menu.png" /></p>
+<p>From version <code>1.3.5</code>, we have added an option to change the defalut category menu filter to hierarchical menu. Follow the below steps:</p>
+<ol>
+<li>Go to <strong>Dashboard -&gt; Typesense -&gt; WooCommerce</strong></li>
+<li>In <strong>Advance Settings</strong>, enable the <strong>Make the default Category filter hierarchical menu</strong></li>
+<li>Click <strong>Save Changes</strong> button</li>
+<li>After saving, you need to re-index your Products from <strong>Typesense-&gt;Typesense</strong> in <strong>Search Configuration</strong> tab.</li>
+</ol>
+<p><span style="color: maroon;"><em>Please note that enabling this option will be resource heavy and may make your backend slow.</em></span></p>
+<p><em>This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have repeat the proess and index again.</em></p>
+<h2 id="additional-search-parameters-for-default-search-configuration">Additional search parameters for default search configuration</h2>
+<p>From version <code>1.3.7</code>, you can configure additional search parameters for both <strong>Instant search</strong> and <strong>Autocomplete</strong> using the filter hooks mentioned below:</p>
+<p><code>cm_tsfwc_additional_search_params</code> -  Configure instant search additional search parameters</p>
+<p><code>cm_tsfwc_additional_autocomplete_params</code> - Configure autocomplete search additional search parameters</p>
+<p>Example code:</p>
+<pre><code>add_filter( 'cm_tsfwc_additional_search_params', 'theme_slug_alter_search_params' );
+function theme_slug_alter_search_params() {
+    return [
+        'hidden_hits' =&gt; 3662,
+        // 'query_by_weights' =&gt; '1,2', 
+        // 'query_by' =&gt; &quot;post_content,post_title&quot;,
+        // 'sort_by' =&gt; 'total_sales:asc', // work only with numerical fields
+        // 'filter_by' =&gt; 'post_title: test',
+        // 'facet_by' =&gt; 'category,prices', // can not override so dont work
+        // 'max_facet_values' =&gt; 1, // can not override so don't work
+        // 'facet_query' =&gt; 'category_lvl0: Alaram',
+        // 'num_typos' =&gt; 2,
+        // 'page' =&gt; 2, // cannot override so don't work
+        // 'group_by' =&gt; 'category',
+        // 'highlightFullFields' =&gt; 'post_title,post_content,test',
+        // 'include_fields' =&gt; 'price,prices',
+        // 'pinned_hits' =&gt; '3662:2',
+    ];
+}
+</code></pre>
+<p>You can refer here: <a href="https://typesense.org/docs/0.23.1/api/search.html#search-parameters">https://typesense.org/docs/0.23.1/api/search.html#search-parameters</a> for additional parameters. </p>
+<p><em>Note: Some parameters like <code>facet_by, q, max_facet_values, page</code> can not be overwritten. Others can be passed as required.</em></p>
                 
               
               
