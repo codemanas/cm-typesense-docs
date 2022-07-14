@@ -520,11 +520,11 @@ From version `1.3.5`, we have added an option to change the defalut category men
 1. Go to **Dashboard -> Typesense -> WooCommerce**
 2. In **Advance Settings**, enable the **Make the default Category filter hierarchical menu**
 3. Click **Save Changes** button
-4. After saving, you need to re-index your Products from **Typesense->Typesense** in **Search Configuration** tab.
+4. After saving, you need to **Delete and Re-index** your Products from **Typesense->Typesense** in **Search Configuration** tab.
 
 <span style="color: maroon;">*Please note that enabling this option will be resource heavy and may make your backend slow.*</span>
 
-*This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have repeat the proess and index again.*
+*This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have to repeat the proess and index again.*
 
 
 ## Additional search parameters for default search configuration
