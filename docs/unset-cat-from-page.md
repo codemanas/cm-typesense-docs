@@ -7,7 +7,7 @@ To remove the fields, paste the below code in your theme's `functions.php`
 ```
  add_filter( 'cm_typesense_schema', 'remove_cat_facet_from_page', 10, 2 );
 
- function removeCatFacetFromPage( $schema, $name ) {
+ function remove_cat_facet_from_page( $schema, $name ) {
     if ( $name == 'page' ) {
         foreach( $schema['fields'] as $index => $field ) {
             if( 'category' == $field['name'] || 'cat_link' == $field['name'] ) {
