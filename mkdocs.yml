@@ -13,5 +13,6 @@ nav:
       - Changing Widgets: changing-widgets.md
       - Adding Custom Post Types: advanced-custom-post-types.md
       - Adding Taxonomy as Collection: advanced-custom-taxonomy.md
+      - Unsetting category from page schema: unset-cat-from-page.md
   - Addons:
       - Typsesense Search for WooCommerce: tsfwc.md
