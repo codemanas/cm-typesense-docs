@@ -311,6 +311,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unset-cat-from-page/" class="md-nav__link">
+      Unsetting category from page schema
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1673,10 +1685,10 @@ Please see this short video on how to translate strings.</p>
 <li>Go to <strong>Dashboard -&gt; Typesense -&gt; WooCommerce</strong></li>
 <li>In <strong>Advance Settings</strong>, enable the <strong>Make the default Category filter hierarchical menu</strong></li>
 <li>Click <strong>Save Changes</strong> button</li>
-<li>After saving, you need to re-index your Products from <strong>Typesense-&gt;Typesense</strong> in <strong>Search Configuration</strong> tab.</li>
+<li>After saving, you need to <strong>Delete and Re-index</strong> your Products from <strong>Typesense-&gt;Typesense</strong> in <strong>Search Configuration</strong> tab.</li>
 </ol>
 <p><span style="color: maroon;"><em>Please note that enabling this option will be resource heavy and may make your backend slow.</em></span></p>
-<p><em>This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have repeat the proess and index again.</em></p>
+<p><em>This is because WooCommerce does not provide the default hierarchy of the products' categories and subcategories. So we have to manually query all the categoires and make a hierarchy which in itself is a heavy process. Further more, on adding, updating and deleting of a category, we have to repeat the proess and index again.</em></p>
 <h2 id="additional-search-parameters-for-default-search-configuration">Additional search parameters for default search configuration</h2>
 <p>From version <code>1.3.7</code>, you can configure additional search parameters for both <strong>Instant search</strong> and <strong>Autocomplete</strong> using the filter hooks mentioned below:</p>
 <p><code>cm_tsfwc_additional_search_params</code> -  Configure instant search additional search parameters</p>
@@ -1722,7 +1734,7 @@ function theme_slug_alter_search_params() {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../advanced-custom-taxonomy/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../unset-cat-from-page/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1731,7 +1743,7 @@ function theme_slug_alter_search_params() {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Adding Taxonomy as Collection
+                Unsetting category from page schema
               </div>
             </div>
           </a>
