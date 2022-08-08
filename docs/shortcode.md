@@ -53,6 +53,11 @@ If multiple sources are enabled - filtering is disabled.
 - Description: Show sticky posts first ?
 - Default: `no`
 
+####custom_class
+- Values: comma separated string of html class `my-custom-class-1,my-custom-class-2`
+- Description: Ability to add custom class
+- Default: `empty`
+
 ##Autocomplete
 
 ###Shortcode
