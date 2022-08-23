@@ -1,7 +1,7 @@
 site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
-theme: material
+# theme: material
 nav:
   - Installation: index.md
   - Getting Started: getting-started.md
@@ -14,5 +14,6 @@ nav:
       - Adding Custom Post Types: advanced-custom-post-types.md
       - Adding Taxonomy as Collection: advanced-custom-taxonomy.md
       - Unsetting category from page schema: unset-cat-from-page.md
+      - Customizing default result template: customizing-default-hit-template.md
   - Addons:
       - Typsesense Search for WooCommerce: tsfwc.md

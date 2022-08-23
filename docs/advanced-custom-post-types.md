@@ -136,16 +136,18 @@ add_action( 'init', 'wp_docs_create_book_taxonomies', 0 );
 
 ## Adding Custom Post Type
 
-The hook in question to use is : `cm_typesense_available_post_types`
+To add custom post types, `cm_typesense_available_index_types` needs to be used like below:
 ```
-/*** Adds the post type book under available post_types ***/
 function cm_typesense_add_available_post_types( $available_post_types ) {
-	$available_post_types['book'] = [ 'label' => 'Book', 'value' => 'book' ];
+    $available_post_types['book'] = [ 'label' => 'Book', 'value' => 'book' ];
 
-	return $available_post_types;
+    return $available_post_types;
 }
-add_filter( 'cm_typesense_available_post_types',  'cm_typesense_add_available_post_types');
+add_filter( 'cm_typesense_available_index_types',  'cm_typesense_add_available_post_types');
+
 ```
+*Note: This hook is available since version `1.3.0`. Before version `1.3.0`, `cm_typesense_available_post_types` needs to be used for the purspose.*
+
 This will add your custom post type to the available post types dropdown in the backend. Which will allow you to enable the post type and index it.
 
 IMPORTANT NOTE: Please note the index and value MUST be the post_slug
