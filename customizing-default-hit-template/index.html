@@ -536,11 +536,9 @@
 <h3 id="1-register-a-custom-template-for-your-index-type">1. Register a custom template for your index type</h3>
 <p>First you have to register the custom template for your index type. The important part here is the <code>id</code> of the template.
 If you look at the code below, notice the id of the script is <code>tmpl-cmswt-Result-itemTemplate--book</code>. The last part of the <code>id</code> must be value of the index type you are registering with the hook <code>cm_typesense_available_post_types</code>.</p>
-<p>Also note the conditonal check for <code>data.post_type === 'book'</code></p>
 <pre><code>&lt;?php
-function your_prefix_custom_hits() {
-    ?&gt;
-    &lt;script type=&quot;text/html&quot; id=&quot;tmpl-cmswt-Result-itemTemplate--default&quot;&gt;
+function cm_202208_add_book_hit_template() { ?&gt;
+    &lt;script type=&quot;text/html&quot; id=&quot;tmpl-cmswt-Result-itemTemplate--book&quot;&gt;
         &lt;div class=&quot;hit-header&quot;&gt;
             &lt;# if(data.post_thumbnail !== undefined) { #&gt;
             &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; class=&quot;hit-header--link&quot; rel=&quot;nofollow noopener&quot;&gt;
@@ -549,14 +547,12 @@ function your_prefix_custom_hits() {
             &lt;# } #&gt;
         &lt;/div&gt;
         &lt;div class=&quot;hit-content&quot;&gt;
-            &lt;# if(data._highlightResult.permalink !== undefined ) { #&gt;
             &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;h5 class=&quot;title&quot;&gt;{{{data.formatted.post_title}}}&lt;/h5&gt;&lt;/a&gt;
-            &lt;# } #&gt;
             &lt;# if( data.post_type === 'book' ) { #&gt;
             &lt;div class=&quot;hit-meta&quot;&gt;
-                &lt;span class=&quot;posted-on&quot;&gt;
-                    &lt;time datetime=&quot;&quot;&gt;{{data.formatted.postedDate}}&lt;/time&gt;
-                &lt;/span&gt;
+                    &lt;span class=&quot;posted-on&quot;&gt;
+                        &lt;time datetime=&quot;&quot;&gt;{{data.formatted.postedDate}}&lt;/time&gt;
+                    &lt;/span&gt;
                 &lt;# if ( Object.keys(data.formatted.cats).length &gt; 0 ) { #&gt;
                 &lt;div class=&quot;hit-cats&quot;&gt;
                     &lt;# for ( let key in data.formatted.cats ) { #&gt;
@@ -571,11 +567,10 @@ function your_prefix_custom_hits() {
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-
     &lt;/script&gt;
 &lt;?php
 }
-add_action( 'wp_footer', 'your_prefix_custom_hits' );
+add_action( 'wp_footer', 'cm_202208_add_book_hit_template' );
 </code></pre>
 <p><em>Note: The template above is the default template.</em></p>
 <h3 id="2-showing-the-custom-field">2. Showing the custom field</h3>
