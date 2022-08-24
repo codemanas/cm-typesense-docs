@@ -384,6 +384,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../customizing-default-hit-template/" class="md-nav__link">
+      Customizing default result template
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -629,15 +641,16 @@ function wp_docs_create_book_taxonomies() {
 add_action( 'init', 'wp_docs_create_book_taxonomies', 0 );
 </code></pre>
 <h2 id="adding-custom-post-type_1">Adding Custom Post Type</h2>
-<p>The hook in question to use is : <code>cm_typesense_available_post_types</code></p>
-<pre><code>/*** Adds the post type book under available post_types ***/
-function cm_typesense_add_available_post_types( $available_post_types ) {
+<p>To add custom post types, <code>cm_typesense_available_index_types</code> needs to be used like below:</p>
+<pre><code>function cm_typesense_add_available_post_types( $available_post_types ) {
     $available_post_types['book'] = [ 'label' =&gt; 'Book', 'value' =&gt; 'book' ];
 
     return $available_post_types;
 }
-add_filter( 'cm_typesense_available_post_types',  'cm_typesense_add_available_post_types');
+add_filter( 'cm_typesense_available_index_types',  'cm_typesense_add_available_post_types');
+
 </code></pre>
+<p><em>Note: This hook is available since version <code>1.3.0</code>. Before version <code>1.3.0</code>, <code>cm_typesense_available_post_types</code> needs to be used for the purspose.</em></p>
 <p>This will add your custom post type to the available post types dropdown in the backend. Which will allow you to enable the post type and index it.</p>
 <p>IMPORTANT NOTE: Please note the index and value MUST be the post_slug</p>
 <p>Result:
