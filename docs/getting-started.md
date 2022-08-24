@@ -62,9 +62,6 @@ Developer Note: It will replace all calls for get_search_form() and the default 
 #### Instant Search Popup
 Instant Search - replaces all instance of default WordPress search - search forms etc with a popup of instant search.
 You can customize the appearance of the search by going to appearance > customize > Typesense Search
-![Popup](img/instan-search-popup.png)
-
-![Customize Settings](img/customizer-instant-popup.png)
 
 To add a custom trigger - you can add the class "cm-swt-instant-search-popup--trigger" to your button / svg / anchor tag to trigger the popup
 Something like the following:
@@ -75,7 +72,7 @@ Something like the following:
 ```
 
 
-#### Autocomplete
+#### Autocomplete   
 Replaces all search forms with Autocomplete. See example here [https://typesense.codemanas.com/autocomplete/](Autocomplete)
 
 
