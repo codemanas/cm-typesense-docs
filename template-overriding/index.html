@@ -327,6 +327,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../customizing-default-hit-template/" class="md-nav__link">
+      Customizing default result template
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -395,47 +407,8 @@
 </ul>
 <p>The templates are in the plugin <code>search-with-typesense/templates</code> and you can override it by copying it to your child theme.</p>
 <p>To override, copy files from <code>wp-content/plugins/search-with-typesense/templates/</code> folder to <code>wp-content/themes/your-theme/search-with-typesense/</code>,</p>
-<p>Then you can make the changes as you need. For example if you want the filters to show up on the right instead of the left.
-Copy the file <code>instant-search.php</code> from <code>wp-content/plugins/search-with-typesense/templates/</code> to <code>wp-content/themes/your-theme/search-with-typesense/instant-search.php</code>.
-And change the div structure so that main-panel is first and filter-panel is second.</p>
-<p><em>End Result:</em>
-<img alt="Result" src="../img/template-override.png" /></p>
-<p><em>Below is sample of code - please change the template by copying from parent</em> </p>
-<pre><code>    &lt;div class=&quot;main-panel&quot;&gt;
-        &lt;div class=&quot;cm-typesense-search-results-wrapper&quot;&gt;
-            &lt;div class=&quot;cm-typesense-search-posts-pages-results-wrapper&quot;&gt;
-                &lt;?php
-                foreach ( $args['post_types'] as $post_type ) {// echo '&lt;pre&gt;'; var_dump( $config ); echo '&lt;/pre&gt;';
-                    ?&gt;
-                    &lt;div class=&quot;cm-typesense-shortcode-search-heading&quot;&gt;
-                        &lt;h2 class=&quot;cm-typesense-shortcode-search-title&quot;&gt;
-                            &lt;?php
-                            $title = ( isset( $config['config']['post_type'][ $post_type ]['label'] ) &amp;&amp; $config['config']['post_type'][ $post_type ]['label'] != '' ) ? $config['config']['post_type'][ $post_type ]['label'] : $config['available_post_types'][ $post_type ]['label'];
-                            echo esc_html( $title ); ?&gt;
-                        &lt;/h2&gt;
-                        &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ); ?&gt;-sortby cm-typesense-sortby&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ) ?&gt;-result&quot;&gt;&lt;/div&gt;
-                    &lt;div class=&quot;cm-typesense-pagination cm-typesense-shortcode-search-&lt;?php echo esc_html( $post_type ); ?&gt;-pagination&quot;&gt;&lt;/div&gt;
-                &lt;?php } ?&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;?php if ( $args['filter'] === 'show' &amp;&amp; 1 === count( $args['post_types'] ) ) { ?&gt;
-        &lt;div class=&quot;filter-panel&quot;&gt;
-            &lt;?php
-            foreach ( $facet as $filters ) {
-                foreach ( $filters as $filter ) { ?&gt;
-                    &lt;div class=&quot;cm-typesense-shortcode-search-&lt;?php echo esc_html( $filter ); ?&gt;-filters&quot;
-                         data-title =&quot;&lt;?php  esc_html_e( sprintf( 'Filter by %s', ucwords( esc_html( $filter ) ) ), 'search-with-typesense' ); ?&gt;&quot;
-                    &gt;&lt;/div&gt;
-                &lt;?php }
-            }
-            ?&gt;
-        &lt;/div&gt;
-    &lt;?php } ?&gt;
-</code></pre>
+<p>Then you can make the changes as you need.
+Copy the file <code>main-panel.php</code> from <code>wp-content/plugins/search-with-typesense/templates/instant-search/main-panel.php</code> to <code>wp-content/themes/your-theme/search-with-typesense/instant-search/main-panel.php</code>.</p>
                 
               
               

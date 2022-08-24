@@ -15,7 +15,7 @@
     
     
       
-        <title>Customizing Widgets - Search with Typesense</title>
+        <title>Customizing default result template - Search with Typesense</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customizing-instant-search-widgets" class="md-skip">
+        <a href="#customizing-the-default-results-template-in-instant-search-module" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Customizing Widgets
+              Customizing default result template
             
           </span>
         </div>
@@ -269,56 +269,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Customizing Widgets
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../customizing-instant-search-widgets/" class="md-nav__link">
       Customizing Widgets
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#facet-customization" class="md-nav__link">
-    Facet Customization
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-by-customization" class="md-nav__link">
-    Sort By Customization
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -374,11 +329,79 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../customizing-default-hit-template/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Customizing default result template
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Customizing default result template
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-the-default-results-template-in-instant-search-module" class="md-nav__link">
+    Customizing the default results template in instant-search module
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing the default results template in instant-search module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    Use case:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-register-a-custom-template-for-your-index-type" class="md-nav__link">
+    1. Register a custom template for your index type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-showing-the-custom-field" class="md-nav__link">
+    2. Showing the custom field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-debug-what-kind-of-data-are-availabe" class="md-nav__link">
+    3. Debug what kind of data are availabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -439,8 +462,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -449,16 +470,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#facet-customization" class="md-nav__link">
-    Facet Customization
+  <a href="#customizing-the-default-results-template-in-instant-search-module" class="md-nav__link">
+    Customizing the default results template in instant-search module
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing the default results template in instant-search module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    Use case:
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-by-customization" class="md-nav__link">
-    Sort By Customization
+        
+          <li class="md-nav__item">
+  <a href="#1-register-a-custom-template-for-your-index-type" class="md-nav__link">
+    1. Register a custom template for your index type
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-showing-the-custom-field" class="md-nav__link">
+    2. Showing the custom field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-debug-what-kind-of-data-are-availabe" class="md-nav__link">
+    3. Debug what kind of data are availabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -474,51 +522,110 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/customizing-instant-search-widgets.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/codemanas/cm-typesense-docs/edit/master/docs/customizing-default-hit-template.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="customizing-instant-search-widgets">Customizing Instant Search Widgets</h1>
-<p>Since version 1.1.4 of the plugin two new filters have been added to customize Facets and the sort by widgets</p>
-<ul>
-<li>Facets  : <code>cm_typesense_search_facet_settings</code> </li>
-<li>Sort BY : <code>cm_typesense_search_sortby_items</code></li>
-</ul>
-<h2 id="facet-customization">Facet Customization</h2>
-<p>To customize facets you can use the settings than can be passed to the refinementList, see available values <a href="https://www.algolia.com/doc/api-reference/widgets/refinement-list/js/">here</a></p>
-<p>A short example would be making Facet searchable and limit</p>
-<pre><code>function cm_typesense_facet_modifications( $facet_settings, $facet ) {
-    if ( $facet == 'category' ) {
-        $facet_settings = [
-            'searchable' =&gt; true,
-            'limit'      =&gt; 1
-        ];
-    }
+                  <h1>Customizing default result template</h1>
+                
+                <h2 id="customizing-the-default-results-template-in-instant-search-module">Customizing the default results template in instant-search module</h2>
+<h3 id="use-case">Use case:</h3>
+<p>Suppose you added a new field for instance <code>price</code> in your schema and indexed it to TypeSense server. Now how to show the price in the result template?</p>
+<p>To show the price in result tempalte, follow the steps below:</p>
+<h3 id="1-register-a-custom-template-for-your-index-type">1. Register a custom template for your index type</h3>
+<p>First you have to register the custom template for your index type. The important part here is the <code>id</code> of the template.
+If you look at the code below, notice the id of the script is <code>tmpl-cmswt-Result-itemTemplate--book</code>. The last part of the <code>id</code> must be value of the index type you are registering with the hook <code>cm_typesense_available_post_types</code>.</p>
+<p>Also note the conditonal check for <code>data.post_type === 'book'</code></p>
+<pre><code>&lt;?php
+function your_prefix_custom_hits() {
+    ?&gt;
+    &lt;script type=&quot;text/html&quot; id=&quot;tmpl-cmswt-Result-itemTemplate--default&quot;&gt;
+        &lt;div class=&quot;hit-header&quot;&gt;
+            &lt;# if(data.post_thumbnail !== undefined) { #&gt;
+            &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; class=&quot;hit-header--link&quot; rel=&quot;nofollow noopener&quot;&gt;
+                &lt;img src=&quot;{{{data.post_thumbnail}}}&quot;/&gt;
+            &lt;/a&gt;
+            &lt;# } #&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hit-content&quot;&gt;
+            &lt;# if(data._highlightResult.permalink !== undefined ) { #&gt;
+            &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;h5 class=&quot;title&quot;&gt;{{{data.formatted.post_title}}}&lt;/h5&gt;&lt;/a&gt;
+            &lt;# } #&gt;
+            &lt;# if( data.post_type === 'book' ) { #&gt;
+            &lt;div class=&quot;hit-meta&quot;&gt;
+                &lt;span class=&quot;posted-on&quot;&gt;
+                    &lt;time datetime=&quot;&quot;&gt;{{data.formatted.postedDate}}&lt;/time&gt;
+                &lt;/span&gt;
+                &lt;# if ( Object.keys(data.formatted.cats).length &gt; 0 ) { #&gt;
+                &lt;div class=&quot;hit-cats&quot;&gt;
+                    &lt;# for ( let key in data.formatted.cats ) { #&gt;
+                    &lt;div class=&quot;hit-cat&quot;&gt;&lt;a href=&quot;{{{data.formatted.cats[key]}}}&quot;&gt;{{{key}}}&lt;/a&gt;,&lt;/div&gt;
+                    &lt;# } #&gt;
+                &lt;/div&gt;
+                &lt;# } #&gt;
+                &lt;# } #&gt;
+                &lt;div class=&quot;hit-description&quot;&gt;{{{data.formatted.post_content}}}&lt;/div&gt;
+                &lt;div class=&quot;hit-link&quot;&gt;
+                    &lt;a href=&quot;{{data.permalink}}&quot;&gt;&lt;?php _e( 'Read More...', 'search-with-typesense' ); ?&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-    return $facet_settings;
+    &lt;/script&gt;
+&lt;?php
 }
-
-add_filter( 'cm_typesense_search_facet_settings', 'cm_typesense_facet_modifications', 10, 2 );
+add_action( 'wp_footer', 'your_prefix_custom_hits' );
 </code></pre>
-<p>Here I'm checking that the facet is "category" and if it is I am modifying it to make the filter searchable and limit it to 1 result at time.</p>
-<p><img alt="Facet Customization" src="../img/customizing-widgets/facet-customization.png" />
-<em>End Result</em></p>
-<h2 id="sort-by-customization">Sort By Customization</h2>
-<p>You can only add items to sort by, to allow sorting by various fields. A word of caution this is dependent on your schema so please make sure you are only adding sortable fields here. You should see what are sortable fields in Typesense documentation <a href="https://typesense.org/docs/0.22.1/api/documents.html#arguments">here</a> </p>
-<p>Example to add sort by comment count the following code will work.</p>
-<pre><code>function cm_typesense_sortby_items( $items, $post_type ) {
-    if ( $post_type == 'post' ) {
-        $items[] = [ 'label' =&gt; 'Highest Comment Count', 'value' =&gt; $post_type . '/sort/comment_count:desc' ];
-    }
+<p><em>Note: The template above is the default template.</em></p>
+<h3 id="2-showing-the-custom-field">2. Showing the custom field</h3>
+<p>In our case we want to show our custom field <code>price</code>, for that we change the above code by adding this line:
+<br /><code>&lt;span class="price"&gt;Price: ${{{data.price}}}&lt;/span&gt;</code></p>
+<pre><code>&lt;?php
+function your_prefix_custom_hits() {
+    ?&gt;
+    &lt;script type=&quot;text/html&quot; id=&quot;tmpl-cmswt-Result-itemTemplate--default&quot;&gt;
+        &lt;div class=&quot;hit-header&quot;&gt;
+            &lt;# if(data.post_thumbnail !== undefined) { #&gt;
+            &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; class=&quot;hit-header--link&quot; rel=&quot;nofollow noopener&quot;&gt;
+                &lt;img src=&quot;{{{data.post_thumbnail}}}&quot;/&gt;
+            &lt;/a&gt;
+            &lt;# } #&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;hit-content&quot;&gt;
+            &lt;# if(data._highlightResult.permalink !== undefined ) { #&gt;
+            &lt;a href=&quot;{{{data._highlightResult.permalink.value}}}&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;h5 class=&quot;title&quot;&gt;{{{data.formatted.post_title}}}&lt;/h5&gt;&lt;/a&gt;
+            &lt;# } #&gt;
+            &lt;# if( data.post_type === 'book' ) { #&gt;
+            &lt;div class=&quot;hit-meta&quot;&gt;
+                &lt;span class=&quot;posted-on&quot;&gt;
+                    &lt;time datetime=&quot;&quot;&gt;{{data.formatted.postedDate}}&lt;/time&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;price&quot;&gt;Price: ${{{data.price}}}&lt;/span&gt;
+                &lt;# if ( Object.keys(data.formatted.cats).length &gt; 0 ) { #&gt;
+                &lt;div class=&quot;hit-cats&quot;&gt;
+                    &lt;# for ( let key in data.formatted.cats ) { #&gt;
+                    &lt;div class=&quot;hit-cat&quot;&gt;&lt;a href=&quot;{{{data.formatted.cats[key]}}}&quot;&gt;{{{key}}}&lt;/a&gt;,&lt;/div&gt;
+                    &lt;# } #&gt;
+                &lt;/div&gt;
+                &lt;# } #&gt;
+                &lt;# } #&gt;
+                &lt;div class=&quot;hit-description&quot;&gt;{{{data.formatted.post_content}}}&lt;/div&gt;
+                &lt;div class=&quot;hit-link&quot;&gt;
+                    &lt;a href=&quot;{{data.permalink}}&quot;&gt;&lt;?php _e( 'Read More...', 'search-with-typesense' ); ?&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-    return $items;
+    &lt;/script&gt;
+&lt;?php
 }
-
-add_filter( 'cm_typesense_search_sortby_items', 'cm_typesense_sortby_items', 10, 2 );
+add_action( 'wp_footer', 'your_prefix_custom_hits' );
 </code></pre>
-<p><img alt="Sort by Comment Count Added" src="../img/customizing-widgets/sortby-customization.png" />
-<em>End Result</em></p>
+<h3 id="3-debug-what-kind-of-data-are-availabe">3. Debug what kind of data are availabe</h3>
+<p>To debug or see what values are avialable to use, you can add <code>{{console.log(data)}}</code> inside the template and see the available datas.</p>
+<p>In our custom example, this will log something like this:
+<img alt="Available datas log" src="../img/log-hits.png" /></p>
                 
               
               
@@ -537,7 +644,7 @@ add_filter( 'cm_typesense_search_sortby_items', 'cm_typesense_sortby_items', 10,
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../template-overriding/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../unset-cat-from-page/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -546,19 +653,19 @@ add_filter( 'cm_typesense_search_sortby_items', 'cm_typesense_sortby_items', 10,
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overriding Template
+                Unsetting category from page schema
               </div>
             </div>
           </a>
         
         
-          <a href="../changing-widgets/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../tsfwc/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Changing Widgets
+                Typsesense Search for WooCommerce
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
