@@ -77,9 +77,12 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 
 ## Shortcodes
 
+## Instant search
+Displays the instant search with products.
+
 `[cm_tsfwc_search cat_filter='show' price_filter='show' rating_filter='show' attribute_filter='show' pagination='show' sortby='show' placeholder='Search products...' show_featured_first='no']`
 
-#### Options:
+##### Options:
 
 **cat_filter**
 
@@ -134,6 +137,20 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 * Values: string (Advanced Usage [the typesense documentation](https://typesense.org/docs/0.22.1/api/documents.html#search))
 * Description: Query results by these fields
 * Default: `post_title,post_content`
+
+## Autocomplete search
+
+Displays the autocomplete form to search products.
+
+`[cm_tsfwc_autocomplete_search placeholder="Search products"]`
+
+##### Options:
+
+**placeholder**
+
+* Value: string
+* Description: Placeholder text for the search form
+* Default value: empty
 
 ## Template Overwriting
 
