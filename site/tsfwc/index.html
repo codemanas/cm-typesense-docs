@@ -459,11 +459,38 @@
     Shortcodes
   </a>
   
-    <nav class="md-nav" aria-label="Shortcodes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-search" class="md-nav__link">
+    Instant search
+  </a>
+  
+    <nav class="md-nav" aria-label="Instant search">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
+    Options:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocomplete-search" class="md-nav__link">
+    Autocomplete search
+  </a>
+  
+    <nav class="md-nav" aria-label="Autocomplete search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
     Options:
   </a>
   
@@ -894,11 +921,38 @@
     Shortcodes
   </a>
   
-    <nav class="md-nav" aria-label="Shortcodes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-search" class="md-nav__link">
+    Instant search
+  </a>
+  
+    <nav class="md-nav" aria-label="Instant search">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
+    Options:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocomplete-search" class="md-nav__link">
+    Autocomplete search
+  </a>
+  
+    <nav class="md-nav" aria-label="Autocomplete search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
     Options:
   </a>
   
@@ -1326,8 +1380,10 @@
 <p><strong>Note:</strong> Same settings are provided in <strong>Dashboard-&gt;Customize</strong> then <strong>WooCommerce-&gt;Typesense Settings</strong> for previewing the live changes.</p>
 <p><img alt="Product Customizer Setting" src="../img/customizer.png" /></p>
 <h2 id="shortcodes">Shortcodes</h2>
+<h2 id="instant-search">Instant search</h2>
+<p>Displays the instant search with products.</p>
 <p><code>[cm_tsfwc_search cat_filter='show' price_filter='show' rating_filter='show' attribute_filter='show' pagination='show' sortby='show' placeholder='Search products...' show_featured_first='no']</code></p>
-<h4 id="options">Options:</h4>
+<h5 id="options">Options:</h5>
 <p><strong>cat_filter</strong></p>
 <ul>
 <li>Value: <code>show</code> or <code>hide</code></li>
@@ -1381,6 +1437,16 @@
 <li>Values: string (Advanced Usage <a href="https://typesense.org/docs/0.22.1/api/documents.html#search">the typesense documentation</a>)</li>
 <li>Description: Query results by these fields</li>
 <li>Default: <code>post_title,post_content</code></li>
+</ul>
+<h2 id="autocomplete-search">Autocomplete search</h2>
+<p>Displays the autocomplete form to search products.</p>
+<p><code>[cm_tsfwc_autocomplete_search placeholder="Search products"]</code></p>
+<h5 id="options_1">Options:</h5>
+<p><strong>placeholder</strong></p>
+<ul>
+<li>Value: string</li>
+<li>Description: Placeholder text for the search form</li>
+<li>Default value: empty</li>
 </ul>
 <h2 id="template-overwriting">Template Overwriting</h2>
 <p>Overriding the template allows you to change the output for the product listing design as you need to.</p>
