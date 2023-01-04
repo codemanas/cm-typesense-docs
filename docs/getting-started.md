@@ -48,7 +48,6 @@ Here you can
 ### Enable Post Types
 This option allows you to select which post types to index.
 By default the plugin allows you to index posts and pages.
-Pro version of the plugin will be needed to index custom post types.
 
 ### Bulk Index
 Bulk Index option allows you to index all posts(post types) at once.
