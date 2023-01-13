@@ -26,3 +26,12 @@ You should turn on debug log - and view the log files - this is helpful to see w
 1) For some reason a single post is not indexed - while bulk indexing
 2) Bulk indexing does not index all posts / post_types.
 
+##Site Info:
+Site Info - Get info about your WordPress site with the schema info and your Typesense cloud server info
+
+##cURL error 6: Could not resolve host
+This means your node cold not be resolved. 
+
+To resolve this, verify the following:
+1) Check if your credentials are right from the Typesense cloud keys and node.
+2) Your instance in Typesense cloud could have expired. Contact Typesense support for that.
