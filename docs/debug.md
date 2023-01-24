@@ -13,9 +13,10 @@ By default, Error Logs are enabled - you can disable them if you want. To do so 
 ##Error Logs:
 Error logs are logged if there is an error when a request is made to the Typesense node
 Some of the examples
-1) Connection to Node cannot be established
-2) There was an error when inserting the document to the collection
-3) Error creating collection
+
+1. Connection to Node cannot be established
+2. There was an error when inserting the document to the collection 
+3. Error creating collection
 etc.
 
 
@@ -23,15 +24,16 @@ etc.
 Debug log - logs every successful request made to Typesense. You can see the details of what is being sent to the node
 Another use for debug log would be when bulk indexing documents - if for some reason an error log is not generated and documents aren't being added to collection.
 You should turn on debug log - and view the log files - this is helpful to see when 
-1) For some reason a single post is not indexed - while bulk indexing
-2) Bulk indexing does not index all posts / post_types.
+1. For some reason a single post is not indexed - while bulk indexing 
+2. Bulk indexing does not index all posts / post_types.
 
 ##Site Info:
 Site Info - Get info about your WordPress site with the schema info and your Typesense cloud server info
 
 ##cURL error 6: Could not resolve host
-This means your node cold not be resolved. 
+This means your node could not be resolved. 
 
 To resolve this, verify the following:
-1) Check if your credentials are right from the Typesense cloud keys and node.
-2) Your instance in Typesense cloud could have expired. Contact Typesense support for that.
+
+1. Check if your credentials are right from the Typesense cloud keys and node.
+2. Your instance in Typesense cloud could have expired. Contact Typesense support for that.
