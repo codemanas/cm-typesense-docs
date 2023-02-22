@@ -581,3 +581,20 @@ function theme_slug_alter_search_params() {
 You can refer here: [https://typesense.org/docs/0.23.1/api/search.html#search-parameters](https://typesense.org/docs/0.23.1/api/search.html#search-parameters) for additional parameters. 
 
 *Note: Some parameters like `facet_by, q, max_facet_values, page` can not be overwritten. Others can be passed as required.*
+
+
+## Search only after certain character length
+
+From version `1.4.8`, you can configure search to be triggered after certain characters are typed on search bar. The new filter introduced is  `cm_tsfwc_search_query_length`
+
+You can use the hook like below. The below code triggers search only when 4 character is typed on search bar:
+
+```
+add_filter( 'cm_tsfwc_search_query_length', 'your_slug_serach_after_char_count' ); 
+
+function your_slug_serach_after_char_count( $count ) {
+    $count = 4;
+    return $count;
+}
+
+```
