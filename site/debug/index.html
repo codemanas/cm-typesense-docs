@@ -268,6 +268,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#site-info" class="md-nav__link">
+    Site Info:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-error-6-could-not-resolve-host" class="md-nav__link">
+    cURL error 6: Could not resolve host
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -460,6 +474,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#site-info" class="md-nav__link">
+    Site Info:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-error-6-could-not-resolve-host" class="md-nav__link">
+    cURL error 6: Could not resolve host
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -486,17 +514,28 @@
 <p><strong>Dates for logs are all in UTC time for uniformity</strong></p>
 <h2 id="error-logs">Error Logs:</h2>
 <p>Error logs are logged if there is an error when a request is made to the Typesense node
-Some of the examples
-1) Connection to Node cannot be established
-2) There was an error when inserting the document to the collection
-3) Error creating collection
-etc.</p>
+Some of the examples</p>
+<ol>
+<li>Connection to Node cannot be established</li>
+<li>There was an error when inserting the document to the collection </li>
+<li>Error creating collection
+etc.</li>
+</ol>
 <h2 id="debug-log">Debug Log:</h2>
 <p>Debug log - logs every successful request made to Typesense. You can see the details of what is being sent to the node
 Another use for debug log would be when bulk indexing documents - if for some reason an error log is not generated and documents aren't being added to collection.
 You should turn on debug log - and view the log files - this is helpful to see when 
-1) For some reason a single post is not indexed - while bulk indexing
-2) Bulk indexing does not index all posts / post_types.</p>
+1. For some reason a single post is not indexed - while bulk indexing 
+2. Bulk indexing does not index all posts / post_types.</p>
+<h2 id="site-info">Site Info:</h2>
+<p>Site Info - Get info about your WordPress site with the schema info and your Typesense cloud server info</p>
+<h2 id="curl-error-6-could-not-resolve-host">cURL error 6: Could not resolve host</h2>
+<p>This means your node could not be resolved. </p>
+<p>To resolve this, verify the following:</p>
+<ol>
+<li>Check if your credentials are right from the Typesense cloud keys and node.</li>
+<li>Your instance in Typesense cloud could have expired. Contact Typesense support for that.</li>
+</ol>
                 
               
               
