@@ -4,7 +4,7 @@
 
 ###Shortcode
 ```
-[cm_typesense_search post_types="book,post" columns="3" filter="show" per_page="3" sortby="off" placeholder="Search for..."]
+[cm_typesense_search post_types="book,post" columns="3" filter="show" per_page="3" sortby="off" placeholder="Search for..." selected_filters="show" stats="show"]
 ```
 
 ### Options:
@@ -57,6 +57,16 @@ If multiple sources are enabled - filtering is disabled.
 - Values: comma separated string of html class `my-custom-class-1,my-custom-class-2`
 - Description: Ability to add custom class
 - Default: `empty`
+
+####selected_filters
+- Values: `show` or `hide`
+- Description: Shows the selected filters 
+- Default: `show`
+
+####stats
+- Values: `show` or `hide`
+- Description: Shows or hide the number of search results retrieved
+- Default: `show`
 
 ##Autocomplete
 
