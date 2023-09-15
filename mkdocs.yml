@@ -2,9 +2,14 @@ site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
 theme:
-    name: material
-    palette:
-      primary: deep orange
+  name: material
+  font:
+    text: Inclusive Sans
+  logo: assets/logo.png
+  palette:
+    primary: custom
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Installation: index.md
   - Getting Started: getting-started.md
