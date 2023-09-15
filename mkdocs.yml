@@ -8,6 +8,7 @@ theme:
   logo: assets/logo.png
   palette:
     primary: custom
+    accent: deep orange
 extra_css:
   - stylesheets/extra.css
 nav:
