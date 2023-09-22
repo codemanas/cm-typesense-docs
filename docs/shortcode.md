@@ -4,7 +4,7 @@
 
 ###Shortcode
 ```
-[cm_typesense_search post_types="book,post" columns="3" filter="show" per_page="3" sortby="off" placeholder="Search for..." selected_filters="show" stats="show"]
+[cm_typesense_search post_types="book,post" columns="3" filter="show" per_page="3" sortby="off" placeholder="Search for..." selected_filters="show" stats="show" routing="enable"]
 ```
 
 ### Options:
@@ -67,6 +67,11 @@ If multiple sources are enabled - filtering is disabled.
 - Values: `show` or `hide`
 - Description: Shows or hide the number of search results retrieved
 - Default: `show`
+
+####routing
+- Values: `enable` or `disable`
+- Description: Enable or Disable routing feature - this adds the selected search query / facets / filters of the current searches being made to the browser URL. Allowing users to share the current search state.
+- Default: `disable`
 
 ##Autocomplete
 
