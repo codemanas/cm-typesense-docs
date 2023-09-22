@@ -414,6 +414,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    routing
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -873,6 +880,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    routing
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -951,7 +965,7 @@
 <h1 id="shortcodes">Shortcodes</h1>
 <h2 id="instant-search">Instant Search</h2>
 <h3 id="shortcode">Shortcode</h3>
-<pre><code>[cm_typesense_search post_types=&quot;book,post&quot; columns=&quot;3&quot; filter=&quot;show&quot; per_page=&quot;3&quot; sortby=&quot;off&quot; placeholder=&quot;Search for...&quot; selected_filters=&quot;show&quot; stats=&quot;show&quot;]
+<pre><code>[cm_typesense_search post_types=&quot;book,post&quot; columns=&quot;3&quot; filter=&quot;show&quot; per_page=&quot;3&quot; sortby=&quot;off&quot; placeholder=&quot;Search for...&quot; selected_filters=&quot;show&quot; stats=&quot;show&quot; routing=&quot;enable&quot;]
 </code></pre>
 <h3 id="options">Options:</h3>
 <h4 id="placeholder">placeholder</h4>
@@ -1025,6 +1039,12 @@ If multiple sources are enabled - filtering is disabled.</li>
 <li>Values: <code>show</code> or <code>hide</code></li>
 <li>Description: Shows or hide the number of search results retrieved</li>
 <li>Default: <code>show</code></li>
+</ul>
+<h4 id="routing">routing</h4>
+<ul>
+<li>Values: <code>enable</code> or <code>disable</code></li>
+<li>Description: Enable or Disable routing feature - this adds the selected search query / facets / filters of the current searches being made to the browser URL. Allowing users to share the current search state.</li>
+<li>Default: <code>disable</code></li>
 </ul>
 <h2 id="autocomplete">Autocomplete</h2>
 <h3 id="shortcode_1">Shortcode</h3>
