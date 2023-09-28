@@ -63,11 +63,13 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 
 3. **Pagination** - Enable pagination
 
-4. **Show featured products first** - Display featured products first while filtering or searching products
+4. **Routing** - Enabling this option will activate routing, allowing you to share the URL with the applied filter.
 
-5. **Search placeholder** - Change placeholder text on the shop's search
+5. **Show featured products first** - Display featured products first while filtering or searching products
 
-6. **Hijack Product Search** - Hijack WooCommerce search widget and block with Autocomplete.
+6. **Search placeholder** - Change placeholder text on the shop's search
+
+7. **Hijack Product Search** - Hijack WooCommerce search widget and block with Autocomplete.
 
 ![Product Setting](img/setting.png)
 
@@ -113,6 +115,12 @@ Displays the instant search with products.
 * Value: `show` or `hide`
 * Description: Determines the showing or hiding of pagination
 * Default value: "show"
+
+**routing**
+
+* Value: `enalbe` or `disable`
+* Description: Enabling this will activate routing, allowing you to share the URL with the applied filter.
+* Default value: "disable"
 
 **sortby**
 
