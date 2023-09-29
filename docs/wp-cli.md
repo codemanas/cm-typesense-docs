@@ -22,7 +22,8 @@ Index a specific post type to Typesense server
 	Slug of the post type you want to index.
 
 **[--ids=<post-ids>]**
-	The comma separated IDs of the posts of that post type you want to index.
+
+The comma separated IDs of the posts of that post type you want to index.
 
 #### Examples
 
@@ -43,10 +44,12 @@ Delete a specific post type from Typesense server
 #### Options
 
 **<post-type>**
-	Slug of the post type you want to delete.
+
+Slug of the post type you want to delete.
 
 **[--ids=<post-ids>]**
-	The comma separated IDs of the posts of that post type you want to delete.
+
+The comma separated IDs of the posts of that post type you want to delete.
 
 #### Examples
 
