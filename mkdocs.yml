@@ -2,7 +2,7 @@ site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
 theme:
-  name: material
+  # name: material
   font:
     text: Inclusive Sans
   logo: assets/logo.png
@@ -24,5 +24,6 @@ nav:
       - Adding Taxonomy as Collection: advanced-custom-taxonomy.md
       - Unsetting category from page schema: unset-cat-from-page.md
       - Customizing default result template: customizing-default-hit-template.md
+      - WP CLI: wp-cli.md
   - Addons:
       - Typsesense Search for WooCommerce: tsfwc.md
