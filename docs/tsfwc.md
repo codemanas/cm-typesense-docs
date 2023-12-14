@@ -298,6 +298,7 @@ function your_slug_add_custom_attr() {
 	echo '<div 
 	data-attr_facet_name="product_tags_attribute_filter" 
 	data-title ="' . __( "Filter by Tags", 'storefront' ) . '" 
+	data-attr_label ="' . __( "Tags", 'storefront' ) . '"
 	class="cm-tsfwc-shortcode-tags-attribute-filters" 
 	data-filter_type="refinementList"
     data-settings="' . _wp_specialchars( json_encode( [ "searchable" => false ] ), ENT_QUOTES, "UTF-8", true ) . '"
@@ -306,7 +307,7 @@ function your_slug_add_custom_attr() {
 
 ```
 
-* `data-facet_name`: It should same as the name of the field added before. 
+* `data-attr_facet_name`: It should same as the name of the field added before. 
 				   For example: here name of the field added before is `'product_tags_attribute_filter'` so the `data-facet_name` should be `product_tags_attribute_filter`
 
 * `data-title`: Title for the filter
