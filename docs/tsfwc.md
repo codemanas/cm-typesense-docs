@@ -290,7 +290,7 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 
 To display the filter on the frontend, use the action hook `cm_tsfwc_custom_attributes` like below:
 
-
+data-attr_facet_data-facet_name
 ```
 add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
@@ -308,7 +308,7 @@ function your_slug_add_custom_attr() {
 ```
 
 * `data-attr_facet_name`: It should same as the name of the field added before. 
-				   For example: here name of the field added before is `'product_tags_attribute_filter'` so the `data-facet_name` should be `product_tags_attribute_filter`
+				   For example: here name of the field added before is `'product_tags_attribute_filter'` so the `data-attr_facet_name` should be `product_tags_attribute_filter`
 
 * `data-title`: Title for the filter
 
