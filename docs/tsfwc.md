@@ -290,7 +290,7 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 
 To display the filter on the frontend, use the action hook `cm_tsfwc_custom_attributes` like below:
 
-data-attr_facet_data-facet_name
+
 ```
 add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
