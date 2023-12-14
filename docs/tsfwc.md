@@ -296,7 +296,7 @@ add_action( 'cm_tsfwc_custom_attributes', 'your_slug_add_custom_attr' );
 
 function your_slug_add_custom_attr() {
 	echo '<div 
-	data-facet_name="product_tags_attribute_filter" 
+	data-attr_facet_name="product_tags_attribute_filter" 
 	data-title ="' . __( "Filter by Tags", 'storefront' ) . '" 
 	class="cm-tsfwc-shortcode-tags-attribute-filters" 
 	data-filter_type="refinementList"
