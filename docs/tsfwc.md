@@ -118,7 +118,7 @@ Displays the instant search with products.
 
 **routing**
 
-* Value: `enalbe` or `disable`
+* Value: `enable` or `disable`
 * Description: Enabling this will activate routing, allowing you to share the URL with the applied filter.
 * Default value: "disable"
 
