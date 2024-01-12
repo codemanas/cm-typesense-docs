@@ -34,7 +34,7 @@ Typsense Search for WooCommerce is a premimum addon that provides robust, fast s
 ### Activate License
 After activating the plugin, go to **Typesense->Addons**, then activate the license.
 
-![License Activate](img/license.png)
+![License Activate](img/Activation.png)
 
 ### Indexing products
 
@@ -46,36 +46,56 @@ First you need to index i.e. push data to Typsense cloud. To do so, follow the b
 4. After that, click the **Index** button to index. It may take few minutes depending upon the number of products you have.
 5. When the indexing is complete, you will get the success message and process is complete.
 
-![Product Indexing](img/indexing.png)
+![Product Indexing](img/Search.png)
 
 ### Settings
 
 The plugin provides the following default settings at **Typesense->WooCommerce**:
 
-1. **Hijack Shop page** - Hijack shop page listing by the instant search
+1. **Replace Shop with Typesense** - Replace shop with typesense search.
 
-2. **Filters**
-	* **Enable category** - Enable category filtering
-	* **Enable price** - Enable price filtering
-	* **Enable rating** - Enable filtering by rating
-	* **Enable attributes** - Enable filter by attributes
-	* **Enable sortby** - Enable sortby
+2. **Choose what Filters to Enable** - Choose what filters to enable.
+	* **category** - Enable category filtering
+	* **price** - Enable price filtering
+	* **rating** - Enable filtering by rating
+	* **attributes** - Enable filter by attributes
+	* **sortby** - Enable sortby
+		* **Recent**
+		*  **Oldest**
+		*   **Sort by rating: low to high**
+		*   **Sort by rating: high to low**
+		*   **Sort by price: low to high**
+		*   **Sort by price: high to low**
+		*   **Sort by Popularity**
 
-3. **Pagination** - Enable pagination
+3. **Pagination** - Enable pagination of your choosing.
+     + Default - Enable the default pagination.
+     + Infinite - Enable the infinite pagination with 'show more' button.
+        + Show More Text - This option is visible when you select the 'Infinite' option. After clicking the option it changes the text to 'show more .'
 
 4. **Routing** - Enabling this option will activate routing, allowing you to share the URL with the applied filter.
+     + Search placeholder - Change placeholder text on the shop's search
 
-5. **Show featured products first** - Display featured products first while filtering or searching products
+5. **Replace Product Search** - Replace product search with autocomplete search or instant search popup or show featured first.
+      + Autocomplete Search - Uses autocomplete search for product.
+      + Instant Search Popup - Uses instant search and shows results in popup format.
+      + Show featured first - shows the featured product first.
 
-6. **Search placeholder** - Change placeholder text on the shop's search
 
-7. **Hijack Product Search** - Hijack WooCommerce search widget and block with Autocomplete.
+6. **Global Autocomplete Settings** -Autocomplete the Submit button action that you choose.
+      + Keep Autocomplete Panel open -  Uses the autocomplete panel open for users 
+	   + Use Default Product Search - Uses the default panel for users.
+  
+7. **Advanced Settings** - Gives the settings for more features.
+       * **Make the default Category filter hierarchical menu** - makes a default categories filter menu.
+        + Please note that enabling it will be resource heavy for your site. Products need to be Delete and Re-indexed.
+        + What is Hierarchical Menu? <a href = "https://docs.wptypesense.com/tsfwc/#making-category-menu-filter-a-hierarchical-menu">Learn More</a>
 
-![Product Setting](img/setting.png)
+![Product Setting](img/Settings.png)
 
 **Note:** Same settings are provided in **Dashboard->Customize** then **WooCommerce->Typesense Settings** for previewing the live changes.
 
-![Product Customizer Setting](img/customizer.png)
+![Product Customizer Setting](img/Customize.png)
 
 ## Shortcodes
 
