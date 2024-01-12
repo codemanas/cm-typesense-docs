@@ -131,6 +131,7 @@ Displays the instant search with products.
 * Default value: "show"
 
 **pagination**
+
 * Value: `show` or `hide` or `infinite`
 * Description: Determines the showing or hiding or showing infinite results of pagination
     - `show`: shows pagination.
