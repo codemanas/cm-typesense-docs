@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../advanced-custom-taxonomy/">
+        <link rel="prev" href="../customizing-default-hit-template/">
       
       
-        <link rel="next" href="../customizing-default-hit-template/">
+        <link rel="next" href="../tsfwc/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Unsetting category from page schema - Search with Typesense</title>
+        <title>WP CLI - Search with Typesense</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#remove-category-field-from-pages-schema" class="md-skip">
+        <a href="#wp-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unsetting category from page schema
+              WP CLI
             
           </span>
         </div>
@@ -434,18 +434,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../unset-cat-from-page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -454,7 +445,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -484,9 +474,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../wp-cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WP CLI
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -495,6 +503,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wp-cli" class="md-nav__link">
+    WP CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-commands" class="md-nav__link">
+    Supported Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-index" class="md-nav__link">
+    wp typesense index
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-delete" class="md-nav__link">
+    wp typesense delete
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-health" class="md-nav__link">
+    wp typesense health
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense health">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -585,8 +705,108 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wp-cli" class="md-nav__link">
+    WP CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-commands" class="md-nav__link">
+    Supported Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-index" class="md-nav__link">
+    wp typesense index
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-delete" class="md-nav__link">
+    wp typesense delete
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp-typesense-health" class="md-nav__link">
+    wp typesense health
+  </a>
+  
+    <nav class="md-nav" aria-label="wp typesense health">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -604,26 +824,48 @@
   
 
 
-<h1 id="remove-category-field-from-pages-schema">Remove category field from Page's schema</h1>
-<p>By default, the schema of <code>page</code> gets the same schema as <code>post</code>. That means <code>page</code> will also have <code>category</code> and <code>cat_links</code> in it's schema. But that is redundent since page does not have categories. So those fields should be removed from page's schema.</p>
-<p>To remove the fields, paste the below code in your theme's <code>functions.php</code></p>
-<pre><code> add_filter( 'cm_typesense_schema', 'remove_cat_facet_from_page', 10, 2 );
+  <h1>WP CLI</h1>
 
- function remove_cat_facet_from_page( $schema, $name ) {
-    if ( $name == 'page' ) {
-        foreach( $schema['fields'] as $index =&gt; $field ) {
-            if( 'category' == $field['name'] || 'cat_link' == $field['name'] ) {
-                unset( $schema['fields'][ $index ]);
-            }            
-        }
-    }
-
-    // Should be sorted because unset removes the index number only and leave empty in between
-    sort( $schema['fields']);
-    return $schema;
-}
+<h2 id="wp-cli">WP CLI</h2>
+<p>WP-CLI serves as the command-line interface for WordPress, offering a range of commands for various actions typically executed in the WordPress admin.</p>
+<p>Within the framework of the Search With Typesense plugin, our plugin introduces its own set of WP-CLI commands. These commands enable you to index and delete post types, with the flexibility to specify particular IDs. Additionally, the plugin provides an option to assess the health status of the Typesense server.</p>
+<p>This is very helpful if you have command line access to your WordPress installation instace on your server.</p>
+<p><strong>Kindly be aware that the subsequent commands will not remove your posts from the WordPress database. Instead, these commands exclusively index or delete the posts on your Typesense Server.</strong></p>
+<p><strong>Note</strong>: <em>We intend to incorporate additional commands in the future based on your requests. Your feedback would be highly valuable.</em></p>
+<h2 id="supported-commands">Supported Commands</h2>
+<h3 id="wp-typesense-index">wp typesense index</h3>
+<p>Index a specific post type to Typesense server</p>
+<h4 id="options">Options</h4>
+<p><strong><post-type></strong>
+    Slug of the post type you want to index.</p>
+<p><strong>[--ids=<post-ids>]</strong></p>
+<p>The comma separated IDs of the posts of that post type you want to index.</p>
+<h4 id="examples">Examples</h4>
+<pre><code># Index all the default posts
+$ wp typesense index post
 </code></pre>
-<p><strong>Note: After implementing this, <code>page</code> has to be reindexed by clicking <code>Delete and Re-index</code> on settings page</strong></p>
+<pre><code># Index all only specific posts with IDs: 2,3 and 4 for the custom post type 'books'
+$ wp typesense index books --ids=2,3,4
+</code></pre>
+<h3 id="wp-typesense-delete">wp typesense delete</h3>
+<p>Delete a specific post type from Typesense server</p>
+<h4 id="options_1">Options</h4>
+<p><strong><post-type></strong></p>
+<p>Slug of the post type you want to delete.</p>
+<p><strong>[--ids=<post-ids>]</strong></p>
+<p>The comma separated IDs of the posts of that post type you want to delete.</p>
+<h4 id="examples_1">Examples</h4>
+<pre><code># delete all the default posts
+$ wp typesense delete post
+</code></pre>
+<pre><code># delete all only specific posts with IDs: 2,3 and 4 for the custom post type 'books'
+$ wp typesense delete books --ids=2,3,4
+</code></pre>
+<h3 id="wp-typesense-health">wp typesense health</h3>
+<p>Check the health status of your Typesense server.</p>
+<h4 id="examples_2">Examples</h4>
+<pre><code>$ wp typesense health
+</code></pre>
 
 
 

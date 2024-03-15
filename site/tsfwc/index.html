@@ -11,12 +11,12 @@
       
       
       
-        <link rel="prev" href="../customizing-default-hit-template/">
+        <link rel="prev" href="../wp-cli/">
       
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
@@ -457,6 +457,26 @@
   
   <span class="md-ellipsis">
     Customizing default result template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wp-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WP CLI
   </span>
   
 
@@ -1519,7 +1539,7 @@
 <h2 id="getting-started">Getting started</h2>
 <h3 id="activate-license">Activate License</h3>
 <p>After activating the plugin, go to <strong>Typesense-&gt;Addons</strong>, then activate the license.</p>
-<p><img alt="License Activate" src="../img/license.png" /></p>
+<p><img alt="License Activate" src="../img/Activation.png" /></p>
 <h3 id="indexing-products">Indexing products</h3>
 <p>First you need to index i.e. push data to Typsense cloud. To do so, follow the below steps:</p>
 <ol>
@@ -1529,39 +1549,77 @@
 <li>After that, click the <strong>Index</strong> button to index. It may take few minutes depending upon the number of products you have.</li>
 <li>When the indexing is complete, you will get the success message and process is complete.</li>
 </ol>
-<p><img alt="Product Indexing" src="../img/indexing.png" /></p>
+<p><img alt="Product Indexing" src="../img/Search.png" /></p>
 <h3 id="settings">Settings</h3>
 <p>The plugin provides the following default settings at <strong>Typesense-&gt;WooCommerce</strong>:</p>
 <ol>
 <li>
-<p><strong>Hijack Shop page</strong> - Hijack shop page listing by the instant search</p>
+<p><strong>Replace Shop with Typesense</strong> - Replace shop with typesense search.</p>
 </li>
 <li>
-<p><strong>Filters</strong></p>
+<p><strong>Choose what Filters to Enable</strong> - Choose what filters to enable.</p>
 <ul>
-<li><strong>Enable category</strong> - Enable category filtering</li>
-<li><strong>Enable price</strong> - Enable price filtering</li>
-<li><strong>Enable rating</strong> - Enable filtering by rating</li>
-<li><strong>Enable attributes</strong> - Enable filter by attributes</li>
-<li><strong>Enable sortby</strong> - Enable sortby</li>
+<li><strong>category</strong> - Enable category filtering</li>
+<li><strong>price</strong> - Enable price filtering</li>
+<li><strong>rating</strong> - Enable filtering by rating</li>
+<li><strong>attributes</strong> - Enable filter by attributes</li>
+<li><strong>sortby</strong> - Enable sortby<ul>
+<li><strong>Recent</strong></li>
+<li><strong>Oldest</strong></li>
+<li><strong>Sort by rating: low to high</strong></li>
+<li><strong>Sort by rating: high to low</strong></li>
+<li><strong>Sort by price: low to high</strong></li>
+<li><strong>Sort by price: high to low</strong></li>
+<li><strong>Sort by Popularity</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p><strong>Pagination</strong> - Enable pagination</p>
+<p><strong>Pagination</strong> - Enable pagination of your choosing.</p>
+<ul>
+<li>Default - Enable the default pagination.</li>
+<li>Infinite - Enable the infinite pagination with 'show more' button.<ul>
+<li>Show More Text - This option is visible when you select the 'Infinite' option. After clicking the option it changes the text to 'show more .'</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
-<p><strong>Show featured products first</strong> - Display featured products first while filtering or searching products</p>
+<p><strong>Routing</strong> - Enabling this option will activate routing, allowing you to share the URL with the applied filter.</p>
+<ul>
+<li>Search placeholder - Change placeholder text on the shop's search</li>
+</ul>
 </li>
 <li>
-<p><strong>Search placeholder</strong> - Change placeholder text on the shop's search</p>
+<p><strong>Replace Product Search</strong> - Replace product search with autocomplete search or instant search popup or show featured first.</p>
+<ul>
+<li>Autocomplete Search - Uses autocomplete search for product.</li>
+<li>Instant Search Popup - Uses instant search and shows results in popup format.</li>
+<li>Show featured first - shows the featured product first.</li>
+</ul>
 </li>
 <li>
-<p><strong>Hijack Product Search</strong> - Hijack WooCommerce search widget and block with Autocomplete.</p>
+<p><strong>Global Autocomplete Settings</strong> -Autocomplete the Submit button action that you choose.</p>
+<ul>
+<li>Keep Autocomplete Panel open -  Uses the autocomplete panel open for users </li>
+<li>Use Default Product Search - Uses the default panel for users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advanced Settings</strong> - Gives the settings for more features.</p>
+<ul>
+<li><strong>Make the default Category filter hierarchical menu</strong> - makes a default categories filter menu.<ul>
+<li>Please note that enabling it will be resource heavy for your site. Products need to be Delete and Re-indexed.</li>
+<li>What is Hierarchical Menu? <a href = "https://docs.wptypesense.com/tsfwc/#making-category-menu-filter-a-hierarchical-menu">Learn More</a></li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
-<p><img alt="Product Setting" src="../img/setting.png" /></p>
+<p><img alt="Product Setting" src="../img/Settings.png" /></p>
 <p><strong>Note:</strong> Same settings are provided in <strong>Dashboard-&gt;Customize</strong> then <strong>WooCommerce-&gt;Typesense Settings</strong> for previewing the live changes.</p>
-<p><img alt="Product Customizer Setting" src="../img/customizer.png" /></p>
+<p><img alt="Product Customizer Setting" src="../img/Customize.png" /></p>
 <h2 id="shortcodes">Shortcodes</h2>
 <h2 id="instant-search">Instant search</h2>
 <p>Displays the instant search with products.</p>
@@ -1593,9 +1651,20 @@
 </ul>
 <p><strong>pagination</strong></p>
 <ul>
-<li>Value: <code>show</code> or <code>hide</code></li>
-<li>Description: Determines the showing or hiding of pagination</li>
+<li>Value: <code>show</code> or <code>hide</code> or <code>infinite</code></li>
+<li>Description: Determines the showing or hiding or showing infinite results of pagination<ul>
+<li><code>show</code>: shows pagination.</li>
+<li><code>hide</code>: hides pagination.</li>
+<li><code>infinite</code>: shows a button for infinite results on button click.</li>
+</ul>
+</li>
 <li>Default value: "show"</li>
+</ul>
+<p><strong>routing</strong></p>
+<ul>
+<li>Value: <code>enable</code> or <code>disable</code></li>
+<li>Description: Enabling this will activate routing, allowing you to share the URL with the applied filter.</li>
+<li>Default value: "disable"</li>
 </ul>
 <p><strong>sortby</strong></p>
 <ul>
@@ -1745,8 +1814,9 @@ function your_slug_add_data_before_entry( $formatted_data, $raw_data, $object_id
 
 function your_slug_add_custom_attr() {
     echo '&lt;div 
-    data-facet_name=&quot;product_tags_attribute_filter&quot; 
+    data-attr_facet_name=&quot;product_tags_attribute_filter&quot; 
     data-title =&quot;' . __( &quot;Filter by Tags&quot;, 'storefront' ) . '&quot; 
+    data-attr_label =&quot;' . __( &quot;Tags&quot;, 'storefront' ) . '&quot;
     class=&quot;cm-tsfwc-shortcode-tags-attribute-filters&quot; 
     data-filter_type=&quot;refinementList&quot;
     data-settings=&quot;' . _wp_specialchars( json_encode( [ &quot;searchable&quot; =&gt; false ] ), ENT_QUOTES, &quot;UTF-8&quot;, true ) . '&quot;
@@ -1756,8 +1826,8 @@ function your_slug_add_custom_attr() {
 </code></pre>
 <ul>
 <li>
-<p><code>data-facet_name</code>: It should same as the name of the field added before. 
-                   For example: here name of the field added before is <code>'product_tags_attribute_filter'</code> so the <code>data-facet_name</code> should be <code>product_tags_attribute_filter</code></p>
+<p><code>data-attr_facet_name</code>: It should same as the name of the field added before. 
+                   For example: here name of the field added before is <code>'product_tags_attribute_filter'</code> so the <code>data-attr_facet_name</code> should be <code>product_tags_attribute_filter</code></p>
 </li>
 <li>
 <p><code>data-title</code>: Title for the filter</p>
