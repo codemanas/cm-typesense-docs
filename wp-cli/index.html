@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
@@ -587,6 +587,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#wp-typesense-delete-reindex" class="md-nav__link">
+    wp typesense delete-reindex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#wp-typesense-health" class="md-nav__link">
     wp typesense health
   </a>
@@ -782,6 +789,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#wp-typesense-delete-reindex" class="md-nav__link">
+    wp typesense delete-reindex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#wp-typesense-health" class="md-nav__link">
     wp typesense health
   </a>
@@ -855,12 +869,15 @@ $ wp typesense index books --ids=2,3,4
 <p><strong>[--ids=<post-ids>]</strong></p>
 <p>The comma separated IDs of the posts of that post type you want to delete.</p>
 <h4 id="examples_1">Examples</h4>
-<pre><code># delete all the default posts
+<pre><code># Drop the post collection from server
 $ wp typesense delete post
 </code></pre>
+<p><strong>Note: This will drop the post collection from the Typesense server</strong></p>
 <pre><code># delete all only specific posts with IDs: 2,3 and 4 for the custom post type 'books'
 $ wp typesense delete books --ids=2,3,4
 </code></pre>
+<h3 id="wp-typesense-delete-reindex">wp typesense delete-reindex</h3>
+<p>Delete/drop the collection and reindex the collections with documents</p>
 <h3 id="wp-typesense-health">wp typesense health</h3>
 <p>Check the health status of your Typesense server.</p>
 <h4 id="examples_2">Examples</h4>
