@@ -2,7 +2,7 @@ site_name: Search with Typesense
 repo_url: https://github.com/codemanas/cm-typesense-docs
 site_author: codemanas
 theme:
-  # name: material
+  name: material
   font:
     text: Inclusive Sans
   logo: assets/logo.png

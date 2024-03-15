@@ -51,14 +51,20 @@ Delete a specific post type from Typesense server
 #### Examples
 
 ```
-# delete all the default posts
+# Drop the post collection from server
 $ wp typesense delete post
 ```
+**Note: This will drop the post collection from the Typesense server**
+
 
 ```
 # delete all only specific posts with IDs: 2,3 and 4 for the custom post type 'books'
 $ wp typesense delete books --ids=2,3,4
 ```
+
+### wp typesense delete-reindex
+
+Delete/drop the collection and reindex the collections with documents
 
 ### wp typesense health
 
