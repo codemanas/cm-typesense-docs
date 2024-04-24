@@ -25,5 +25,7 @@ nav:
       - Unsetting category from page schema: unset-cat-from-page.md
       - Customizing default result template: customizing-default-hit-template.md
       - WP CLI: wp-cli.md
+      - Hooks: hooks.md
+
   - Addons:
       - Typsesense Search for WooCommerce: tsfwc.md
