@@ -38,29 +38,31 @@
 
 ### cm_typesense_locate_template
     * Description:
-    * Arguments: locate_template( $this->theme_folder . '/' . $file ), $file, $args
+    * Arguments: locate_template( $this->theme_folder . '/' . $file )
+                 $file
+                 $args
 
 ### cm_typesense_post_remove_status
     * Description:
     * Arguments: [ 'draft', 'pending' ] 
     
-### _typesense_force_remove_post_on_updatecm 
+### cm_typesense_force_remove_post_on_update 
     * Description:
-    * Arguments: 
- false, $post 
+    * Arguments: false
+                 $post 
 
 ### codemanas_typesense_indexed_post_types 
     * Description:
     * Arguments: $this->enablePostTypes 
 
-### cm_typesense_enabled_taxonomy_for_post_typehe
+### cm_typesense_enabled_taxonomy_for_post_type
     * Description:
-    * Arguments: 
-[ 'category' ]
+    * Arguments: [ 'category' ]
 
 ### cm_typesense_schema
     * Description:
-    * Arguments: $schema, $name
+    * Arguments: $schema
+                 $name
 
 ### cm_typesense_html_image_size
     * Description:
@@ -68,7 +70,10 @@
 
 ### cm_typesense_data_before_entry
     * Description:
-    * Arguments: $formatted_data, $raw_data, $object_id, $schema_name 
+    * Arguments: $formatted_data
+                 $raw_data
+                 $object_id
+                 $schema_name 
 
 ### cm_typesense_autocomplete_search_url
     * Description:
@@ -105,7 +110,9 @@
 
 ### cm_typesense_search_facet_label
     * Description:
-    * Arguments:  $filter_label, $filter, $post_type
+    * Arguments:  $filter_label
+                  $filter
+                  $post_type
 
 ### cm_typesense_search_facet_title
     * Description:
