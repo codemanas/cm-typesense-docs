@@ -362,7 +362,7 @@ function mytheme_add_widgets() {
 ## Removing attribute filter
 
 ### Use Case:
-Suppose you want to remove Filter by `size` filter. Thje 
+Suppose you want to remove Filter by `size` filter. 
 
 #### Use `cm_tsfwc_attribute_facet_skip` hook
 
