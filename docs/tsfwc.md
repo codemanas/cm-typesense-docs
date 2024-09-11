@@ -336,7 +336,7 @@ function your_slug_add_custom_attr() {
 * `data-title`: Title for the filter
 
 * `data-filter_type`: Type of filter to use
-	* Values: `refinementList` `rangeSlider` `rangeInput` `menu`
+	* Values: `refinementList` `rangeSlider` `rangeInput` `menu` `dropdown`
 
 	* *Note:  For `rangeSlider` and `rangeInput` the schema for field must be `int64`*
 
