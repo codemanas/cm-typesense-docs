@@ -1,6 +1,6 @@
 # Search with Typesense #
 ![Banner](img/banner-772x250.png)
-# Installation #
+# Installation: #
 
 ## Minimum Requirements
 
