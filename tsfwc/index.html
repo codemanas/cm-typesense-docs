@@ -1836,7 +1836,7 @@ function your_slug_add_custom_attr() {
 <p><code>data-filter_type</code>: Type of filter to use</p>
 <ul>
 <li>
-<p>Values: <code>refinementList</code> <code>rangeSlider</code> <code>rangeInput</code> <code>menu</code></p>
+<p>Values: <code>refinementList</code> <code>rangeSlider</code> <code>rangeInput</code> <code>menu</code> <code>dropdown</code></p>
 </li>
 <li>
 <p><em>Note:  For <code>rangeSlider</code> and <code>rangeInput</code> the schema for field must be <code>int64</code></em></p>
@@ -1858,12 +1858,12 @@ function mytheme_add_widgets() {
 </code></pre>
 <h2 id="removing-attribute-filter">Removing attribute filter</h2>
 <h3 id="use-case_3">Use Case:</h3>
-<p>Suppose you want to remove Filter by <code>size</code> filter.</p>
+<p>Suppose you want to remove Filter by <code>size</code> filter. </p>
 <h4 id="use-cm_tsfwc_attribute_facet_skip-hook">Use <code>cm_tsfwc_attribute_facet_skip</code> hook</h4>
 <pre><code>add_filter( 'cm_tsfwc_attribute_facet_skip', 'mytheme_hide_attribute_facet' );
 
 function mytheme_hide_attribute_facet() {
-    return ['book-author'];
+    return ['size']; // Value should be the attribute value registered in WooCommerce
 }
 </code></pre>
 <h2 id="changing-attribute-widget-type">Changing attribute widget type</h2>
