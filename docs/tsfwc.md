@@ -56,6 +56,7 @@ The plugin provides the following default settings at **Typesense->WooCommerce**
 
 2. **Choose what Filters to Enable** - Choose what filters to enable.
 	* **category** - Enable category filtering
+	* **brands** - Enable brands filtering
 	* **price** - Enable price filtering
 	* **rating** - Enable filtering by rating
 	* **attributes** - Enable filter by attributes
@@ -111,6 +112,14 @@ Displays the instant search with products.
 * Value: `show` or `hide`
 * Description: Determines the showing or hiding of the category filter
 * Default value: "show"
+
+**brands_filter**
+
+* Value: `show` or `hide`
+* Description: Determines the showing or hiding of the brands filter
+* Default value: "show"
+
+*Note: Introduced from version 1.8.0 with the introduction of Brands custom taxonomy in WooCommerce v9.6. You need to **Delete & Re-Index** for this to work properly and enable it.*
 
 **price_filter**
 
